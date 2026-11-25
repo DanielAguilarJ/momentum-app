@@ -1,0 +1,29 @@
+---
+import Base from "../layouts/Base.astro";
+import Nav from "./Nav.astro";
+import Stage from "./Stage.astro";
+import Weeks from "./Weeks.astro";
+import Features from "./Features.astro";
+import Trust from "./Trust.astro";
+import Close from "./Close.astro";
+import { COPY, type Lang } from "../copy";
+
+interface Props {
+  lang: Lang;
+}
+const t = COPY[Astro.props.lang];
+---
+
+<Base t={t}>
+  <Nav t={t} />
+  <main id="contenido">
+    <Stage t={t} />
+    <Weeks t={t} />
+    <Features t={t} />
+    <Trust t={t} />
+    <Close t={t} />
+  </main>
+  <script>
+    import "../scripts/main";
+  </script>
+</Base>

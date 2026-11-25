@@ -1,0 +1,20 @@
+---
+// Lucide icon inlined at build time (one stroke system for the whole page).
+import { readFileSync } from "node:fs";
+import { createRequire } from "node:module";
+
+interface Props {
+  name: string;
+  class?: string;
+}
+const { name, class: cls = "" } = Astro.props;
+const require = createRequire(import.meta.url);
+const file = require.resolve(`lucide-static/icons/${name}.svg`);
+const svg = readFileSync(file, "utf8")
+  .replace(/<!--[\s\S]*?-->/g, "")
+  .replace(/\sclass="[^"]*"/, "")
+  .replace("<svg", `<svg aria-hidden="true" focusable="false" class="icon ${cls}"`)
+  .replace(/stroke-width="2"/, 'stroke-width="1.75"');
+---
+
+<Fragment set:html={svg} />

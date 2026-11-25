@@ -1,0 +1,286 @@
+---
+import Icon from "./Icon.astro";
+import { BASE, type Copy } from "../copy";
+
+interface Props {
+  t: Copy;
+}
+const { t } = Astro.props;
+const d = t.disclosure;
+const c = t.compare;
+---
+
+<section class="privacy" id="privacidad" aria-labelledby="privacy-title">
+  <div class="shell privacy-grid">
+    <div>
+      <h2 id="privacy-title">{t.privacy.h2}</h2>
+      <p class="lead">{t.privacy.text}</p>
+      <ul class="points">
+        {t.privacy.points.map(([strong, rest]) => (
+          <li><Icon name="shield-check" /><span><b>{strong}</b> {rest}</span></li>
+        ))}
+      </ul>
+    </div>
+    <figure class="dialog-wrap">
+      <div class="dialog" role="presentation">
+        <p class="dialog-title">{d.title}</p>
+        <p>{d.intro}</p>
+        <p class="dialog-sub">{d.readsTitle}</p>
+        <ul>{d.reads.map((r) => <li>{r}</li>)}</ul>
+        <p class="dialog-sub">{d.useTitle}</p>
+        <p>{d.use}</p>
+        <div class="dialog-actions">
+          <span class="text-btn">{d.decline}</span>
+          <span class="fill-btn">{d.accept}</span>
+        </div>
+      </div>
+      <figcaption>{d.caption}</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section class="compare" aria-labelledby="compare-title">
+  <div class="shell">
+    <h2 id="compare-title">{c.h2}</h2>
+    <div class="table-wrap" tabindex="0" role="region" aria-labelledby="compare-title">
+      <table>
+        <thead>
+          <tr>{c.cols.map((col, i) => (i === 0 ? <td></td> : <th scope="col" class={i === 3 ? "us" : ""}>{col}</th>))}</tr>
+        </thead>
+        <tbody>
+          {c.rows.map((row) => (
+            <tr>
+              <th scope="row">{row[0]}</th>
+              <td>{row[1]}</td>
+              <td>{row[2]}</td>
+              <td class="us"><Icon name="check" />{row[3]}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+    <p class="source"><a class="link-arrow" href={BASE + c.sourcePath}>{c.source}<Icon name="arrow-right" /></a></p>
+  </div>
+</section>
+
+<section class="free">
+  <div class="shell free-grid">
+    <p class="words">{t.free.words.map((w) => <span>{w} </span>)}</p>
+    <p class="free-text">{t.free.text}</p>
+  </div>
+</section>
+
+<style>
+  .privacy {
+    background: var(--night);
+    padding-block: clamp(96px, 12vw, 170px);
+    border-top: 1px solid var(--line);
+  }
+  .privacy-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: clamp(40px, 7vw, 110px);
+    align-items: center;
+  }
+  .privacy .lead {
+    margin-top: 24px;
+  }
+  .points {
+    list-style: none;
+    margin: 36px 0 0;
+    padding: 0;
+    display: grid;
+    gap: 18px;
+  }
+  .points li {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 14px;
+    align-items: start;
+    color: var(--ink-2);
+  }
+  .points b {
+    color: var(--ink);
+    font-weight: 600;
+  }
+  .points :global(svg) {
+    width: 22px;
+    height: 22px;
+    color: var(--mint);
+    margin-top: 1px;
+  }
+  .dialog-wrap {
+    margin: 0;
+    display: grid;
+    gap: 14px;
+    justify-items: center;
+    padding: clamp(28px, 5vw, 64px) clamp(16px, 4vw, 48px);
+    border-radius: 32px;
+    background: radial-gradient(90% 80% at 50% 30%, #1d1844, var(--night-2));
+    box-shadow: inset 0 0 0 1px var(--line);
+  }
+  .dialog {
+    max-width: 380px;
+    padding: 26px 24px 18px;
+    border-radius: 28px;
+    background: #f7f8fc;
+    color: #1a1f2b;
+    font-size: 0.875rem;
+    line-height: 1.5;
+    box-shadow: 0 30px 60px -20px rgb(0 0 0 / 0.7);
+    display: grid;
+    gap: 10px;
+  }
+  .dialog-title {
+    font-size: 1.3rem;
+    font-weight: 600;
+    line-height: 1.25;
+    letter-spacing: -0.01em;
+    color: #15122b;
+  }
+  .dialog-sub {
+    font-weight: 600;
+    color: #343a4b;
+    margin-top: 4px;
+  }
+  .dialog ul {
+    margin: 0;
+    padding-left: 1.1em;
+    color: #4b5266;
+  }
+  .dialog p:not(.dialog-title):not(.dialog-sub) {
+    color: #4b5266;
+  }
+  .dialog-actions {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 8px;
+    margin-top: 10px;
+  }
+  .text-btn {
+    padding: 10px 14px;
+    color: #4f46e5;
+    font-weight: 600;
+  }
+  .fill-btn {
+    padding: 10px 18px;
+    border-radius: 999px;
+    background: #4f46e5;
+    color: #fff;
+    font-weight: 600;
+  }
+  .dialog-wrap figcaption {
+    font-size: 0.75rem;
+    color: var(--ink-3);
+  }
+
+  .compare {
+    background: var(--night);
+    padding-block: clamp(40px, 6vw, 80px) clamp(96px, 12vw, 160px);
+  }
+  .compare h2 {
+    max-width: 860px;
+  }
+  .table-wrap {
+    margin-top: 56px;
+    overflow-x: auto;
+    border-radius: 24px;
+    box-shadow: inset 0 0 0 1px var(--line);
+  }
+  table {
+    width: 100%;
+    min-width: 760px;
+    border-collapse: collapse;
+    font-size: 0.975rem;
+  }
+  th,
+  td {
+    text-align: left;
+    vertical-align: top;
+    padding: 22px 24px;
+    border-bottom: 1px solid var(--line);
+  }
+  tbody tr:last-child th,
+  tbody tr:last-child td {
+    border-bottom: 0;
+  }
+  thead th {
+    font-weight: 600;
+    color: var(--ink-2);
+    font-size: 0.875rem;
+    width: 24%;
+  }
+  tbody th {
+    font-weight: 600;
+    color: var(--ink);
+    width: 28%;
+  }
+  tbody td {
+    color: var(--ink-3);
+  }
+  .us {
+    background: var(--violet-field);
+    color: var(--ink) !important;
+  }
+  thead .us {
+    color: var(--violet-3) !important;
+    font-family: var(--font-display);
+    font-stretch: 84%;
+    font-size: 1.25rem;
+    letter-spacing: -0.02em;
+  }
+  td.us {
+    font-weight: 600;
+  }
+  td.us :global(svg) {
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    margin: -3px 8px 0 0;
+    vertical-align: middle;
+    color: var(--mint);
+  }
+  .source {
+    margin-top: 20px;
+  }
+
+  .free {
+    background: var(--night);
+    padding-block: clamp(40px, 6vw, 80px) clamp(110px, 14vw, 190px);
+  }
+  .free-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.4fr) minmax(0, 0.6fr);
+    gap: 40px;
+    align-items: end;
+  }
+  .words {
+    font-family: var(--font-display);
+    font-stretch: 78%;
+    font-weight: 750;
+    font-size: clamp(3.4rem, 9vw, 6rem);
+    line-height: 0.92;
+    letter-spacing: -0.045em;
+  }
+  .words span {
+    display: block;
+  }
+  .words span:nth-child(2) {
+    color: var(--violet-3);
+  }
+  .words span:nth-child(3) {
+    color: var(--mint);
+  }
+  .free-text {
+    color: var(--ink-2);
+    font-size: 1.125rem;
+    max-width: 22em;
+  }
+  @media (max-width: 860px) {
+    .privacy-grid,
+    .free-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
