@@ -7,7 +7,7 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 titles = {}
 problems = 0
 for dirpath, dirs, files in os.walk(ROOT):
-    dirs[:] = [d for d in dirs if not d.startswith(".") and d != "_src"]
+    dirs[:] = [d for d in dirs if not d.startswith(".") and d not in ("_src", "_web")]
     for f in files:
         if f != "index.html":
             continue
@@ -16,7 +16,7 @@ for dirpath, dirs, files in os.walk(ROOT):
         rel = os.path.relpath(p, ROOT)
         title = re.search(r"<title>(.*?)</title>", t).group(1)
         desc = re.search(r'name="description" content="(.*?)"', t).group(1)
-        h1 = len(re.findall(r"<h1>", t))
+        h1 = len(re.findall(r"<h1[\s>]", t))
         msgs = []
         if len(title) > 70:
             msgs.append(f"título largo ({len(title)})")

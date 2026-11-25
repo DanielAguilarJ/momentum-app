@@ -1,0 +1,5 @@
+_web/node_modules/
+_web/dist/
+_web/.astro/
+__pycache__/
+.impeccable/live/

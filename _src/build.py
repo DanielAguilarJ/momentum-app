@@ -1,4 +1,6 @@
-"""Genera el sitio estático en la raíz del repositorio. Uso: python3 -s _src/build.py"""
+"""Genera las guías, el sitemap y la lista de guías para la portada.
+Uso: python3 -s _src/build.py && (cd _web && npm run build)"""
+import json
 import os
 import sys
 from html import escape
@@ -64,13 +66,23 @@ def write(rel, text):
         f.write(text)
 
 
+def write_guides_json():
+    """Lista de guías para la portada en Astro (_web), que sustituye a las portadas de Python."""
+    data = {lang: [dict(path=p["path"], h1=p["h1"], description=p["description"]) for p in guides(lang)]
+            for lang in ("es", "en")}
+    write("_web/src/data/guides.json", json.dumps(data, ensure_ascii=False, indent=1) + "\n")
+
+
 def main():
     PAGES = finish()
     seen = set()
     for p in PAGES:
         assert p["path"] not in seen, p["path"]
         seen.add(p["path"])
+        if p.get("home"):
+            continue  # las portadas "/" y "/en/" las genera Astro en _web/
         write(p["path"].lstrip("/") + "index.html", page(p))
+    write_guides_json()
     paths = {p["path"] for p in PAGES}
     for p in PAGES:
         if p.get("alt"):

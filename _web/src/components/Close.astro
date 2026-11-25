@@ -1,0 +1,339 @@
+---
+import Icon from "./Icon.astro";
+import guides from "../data/guides.json";
+import { BASE, GITHUB, playUrl, type Copy } from "../copy";
+
+interface Props {
+  t: Copy;
+}
+const { t } = Astro.props;
+const list = guides[t.lang];
+---
+
+<section class="guides" aria-labelledby="guides-title">
+  <div class="shell">
+    <div class="guides-head">
+      <h2 id="guides-title">{t.guides.h2}</h2>
+      <a class="link-arrow" href={BASE + t.nav.guidesPath}>{t.guides.all}<Icon name="arrow-right" /></a>
+    </div>
+    <ul class="guide-list">
+      {list.map((g) => (
+        <li>
+          <a href={BASE + g.path}>
+            <span class="g-title">{g.h1}</span>
+            <Icon name="arrow-right" />
+          </a>
+        </li>
+      ))}
+    </ul>
+  </div>
+</section>
+
+<section class="faq" aria-labelledby="faq-title">
+  <div class="shell faq-grid">
+    <h2 id="faq-title">{t.faq.h2}</h2>
+    <div class="faq-list">
+      {t.faq.items.map(([q, a]) => (
+        <details>
+          <summary>{q}<Icon name="chevron-down" /></summary>
+          <p>{a}</p>
+        </details>
+      ))}
+    </div>
+  </div>
+</section>
+
+<section class="dawn" aria-labelledby="dawn-title" data-dawn>
+  <div class="sky" aria-hidden="true">
+    <div class="sun" data-sun></div>
+  </div>
+  <div class="shell dawn-content">
+    <h2 id="dawn-title">{t.dawn.h2}</h2>
+    <ol class="steps">
+      {t.dawn.steps.map((s, i) => (
+        <li><span class="num">{i + 1}</span>{s}</li>
+      ))}
+    </ol>
+    <a class="btn" href={playUrl(t.lang, "home-dawn")} rel="noopener"><Icon name="download" />{t.dawn.cta}</a>
+  </div>
+</section>
+
+<footer class="foot">
+  <div class="shell foot-grid">
+    <a class="brand" href={BASE + t.path}>
+      <img src={`${BASE}/assets/icon.png`} alt="" width="36" height="36" loading="lazy" />
+      Momentum
+    </a>
+    <nav aria-label="Momentum">
+      <a href={BASE + t.nav.guidesPath}>{t.footer.guides}</a>
+      <a href={BASE + t.alt} hreflang={t.lang === "es" ? "en" : "es"} lang={t.lang === "es" ? "en" : "es"}>{t.nav.other}</a>
+      <a href={GITHUB}>{t.footer.source}</a>
+    </nav>
+    <p class="note">{t.footer.note}</p>
+  </div>
+</footer>
+
+<style>
+  .guides {
+    background: var(--night);
+    padding-block: clamp(96px, 12vw, 160px) clamp(40px, 6vw, 80px);
+    border-top: 1px solid var(--line);
+  }
+  .guides-head {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: end;
+    gap: 16px 40px;
+  }
+  .guides-head h2 {
+    max-width: 760px;
+  }
+  .guide-list {
+    list-style: none;
+    margin: 56px 0 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: 48px;
+  }
+  .guide-list li {
+    display: flex;
+  }
+  .guide-list a {
+    flex: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    padding: 22px 0;
+    border-bottom: 1px solid var(--line);
+    text-decoration: none;
+    color: var(--ink);
+    font-weight: 500;
+    font-size: 1.0625rem;
+    line-height: 1.35;
+    transition: color 0.3s;
+  }
+  .guide-list :global(svg) {
+    width: 20px;
+    height: 20px;
+    flex: none;
+    color: var(--ink-3);
+    transition: transform 0.5s var(--ease-out), color 0.3s;
+  }
+  .guide-list a:hover {
+    color: var(--violet-3);
+  }
+  .guide-list a:hover :global(svg) {
+    transform: translateX(4px);
+    color: var(--violet-3);
+  }
+
+  .faq {
+    background: var(--night);
+    padding-block: clamp(80px, 10vw, 140px) clamp(120px, 14vw, 200px);
+  }
+  .faq-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+    gap: 40px clamp(32px, 6vw, 96px);
+    align-items: start;
+  }
+  details {
+    border-bottom: 1px solid var(--line);
+  }
+  details:first-child {
+    border-top: 1px solid var(--line);
+  }
+  summary {
+    list-style: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 24px;
+    padding: 22px 0;
+    font-weight: 600;
+    font-size: 1.0625rem;
+    line-height: 1.4;
+  }
+  summary::-webkit-details-marker {
+    display: none;
+  }
+  summary :global(svg) {
+    width: 20px;
+    height: 20px;
+    flex: none;
+    color: var(--ink-3);
+    transition: transform 0.5s var(--ease-out);
+  }
+  details[open] summary :global(svg) {
+    transform: rotate(180deg);
+  }
+  summary:hover {
+    color: var(--violet-3);
+  }
+  details p {
+    padding: 0 40px 24px 0;
+    color: var(--ink-2);
+    max-width: 62ch;
+  }
+
+  /* Dawn: the cyclorama close. Night above, the sun clearing the horizon below. */
+  .dawn {
+    position: relative;
+    min-height: 118svh;
+    overflow: hidden;
+    background: linear-gradient(
+      180deg,
+      var(--night) 0%,
+      #120d2e 22%,
+      #2a1a5e 44%,
+      #6b2f7d 62%,
+      #c2497a 76%,
+      #f08a6c 86%,
+      #fbc98e 94%,
+      #fde9c4 100%
+    );
+    isolation: isolate;
+  }
+  .sky {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+  }
+  .sun {
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    width: clamp(260px, 46vw, 560px);
+    aspect-ratio: 1;
+    margin-left: calc(clamp(260px, 46vw, 560px) / -2);
+    border-radius: 50%;
+    background: radial-gradient(circle at 50% 45%, #fff7e0 0%, #fde68a 38%, #fbbf24 72%, #f59e0b 100%);
+    transform: translateY(var(--sun-y, 55%));
+    will-change: transform;
+  }
+  .dawn-content {
+    position: relative;
+    z-index: 1;
+    padding-top: clamp(130px, 16vw, 210px);
+    display: grid;
+    justify-items: center;
+    text-align: center;
+  }
+  .dawn h2 {
+    font-size: clamp(3rem, 8vw, 6rem);
+    line-height: 0.92;
+    font-stretch: 80%;
+    font-weight: 750;
+    letter-spacing: -0.045em;
+    max-width: 12ch;
+  }
+  .steps {
+    list-style: none;
+    margin: 48px 0 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 250px));
+    justify-content: center;
+    gap: 18px 36px;
+    text-align: left;
+    color: #ddd6fe;
+    font-size: 1rem;
+    line-height: 1.45;
+  }
+  .steps li {
+    display: grid;
+    grid-template-columns: 28px 1fr;
+    align-items: start;
+    gap: 12px;
+  }
+  .steps .num {
+    margin-top: -2px;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    font-size: 0.8125rem;
+    font-weight: 600;
+    box-shadow: inset 0 0 0 1.5px rgb(221 214 254 / 0.5);
+    color: var(--ink);
+  }
+  .dawn .btn {
+    margin-top: 44px;
+  }
+
+  /* The ground under the sunrise: the horizon is the footer's top edge. */
+  .foot {
+    position: relative;
+    z-index: 1;
+    background: #110c29;
+    color: var(--ink);
+    padding-block: 56px 64px;
+  }
+  .foot-grid {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 28px 40px;
+    align-items: center;
+  }
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-family: var(--font-display);
+    font-stretch: 84%;
+    font-weight: 700;
+    font-size: 1.35rem;
+    letter-spacing: -0.02em;
+    text-decoration: none;
+  }
+  .brand img {
+    border-radius: 10px;
+  }
+  .foot nav {
+    justify-self: end;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 28px;
+  }
+  .foot nav a {
+    color: var(--ink-2);
+    text-decoration: none;
+    font-weight: 500;
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+  }
+  .foot nav a:hover {
+    color: var(--ink);
+    text-decoration: underline;
+  }
+  .foot .note {
+    grid-column: 1 / -1;
+    padding-top: 24px;
+    border-top: 1px solid var(--line);
+    font-size: 0.875rem;
+    color: var(--ink-3);
+    max-width: 70ch;
+  }
+
+  @media (max-width: 860px) {
+    .guide-list,
+    .faq-grid {
+      grid-template-columns: 1fr;
+    }
+    .steps {
+      grid-template-columns: minmax(0, 340px);
+    }
+    .foot-grid {
+      grid-template-columns: 1fr;
+    }
+    .foot nav {
+      justify-self: start;
+    }
+  }
+</style>

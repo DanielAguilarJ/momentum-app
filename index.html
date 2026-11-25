@@ -1,114 +1,1194 @@
-<!doctype html>
-<html lang="es">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Momentum: bloqueador de apps y de Reels y Shorts para Android</title>
-<meta name="description" content="Bloquea Reels y Shorts sin bloquear toda la app, pon límites de tiempo a tus apps y reduce tu tiempo de pantalla. Gratis, sin anuncios y sin cuenta.">
-<link rel="canonical" href="https://danielaguilarj.github.io/momentum-app/">
-<link rel="alternate" hreflang="es" href="https://danielaguilarj.github.io/momentum-app/"><link rel="alternate" hreflang="en" href="https://danielaguilarj.github.io/momentum-app/en/"><link rel="alternate" hreflang="x-default" href="https://danielaguilarj.github.io/momentum-app/">
-<meta name="theme-color" content="#4f46e5">
-<link rel="icon" href="https://danielaguilarj.github.io/momentum-app/assets/icon.png" type="image/png">
-<meta property="og:type" content="website">
-<meta property="og:site_name" content="Momentum">
-<meta property="og:title" content="Momentum: bloqueador de apps y de Reels y Shorts para Android">
-<meta property="og:description" content="Bloquea Reels y Shorts sin bloquear toda la app, pon límites de tiempo a tus apps y reduce tu tiempo de pantalla. Gratis, sin anuncios y sin cuenta.">
-<meta property="og:url" content="https://danielaguilarj.github.io/momentum-app/">
-<meta property="og:image" content="https://danielaguilarj.github.io/momentum-app/assets/og.png">
-<meta property="og:locale" content="es_419">
-<meta name="twitter:card" content="summary_large_image">
-<style>
-:root{--bg:#fff;--fg:#1b1d2a;--muted:#5b6075;--line:#e4e6f0;--accent:#4f46e5;--accent-fg:#fff;--card:#f6f7fc}
-@media (prefers-color-scheme:dark){:root{--bg:#10111a;--fg:#ecedf6;--muted:#a3a7bd;--line:#262838;--accent:#818cf8;--accent-fg:#10111a;--card:#181a28}}
-*{box-sizing:border-box}
-html{-webkit-text-size-adjust:100%}
-body{margin:0;background:var(--bg);color:var(--fg);font:17px/1.65 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
-a{color:var(--accent)}
-.wrap{max-width:760px;margin:0 auto;padding:0 20px}
-header.top{border-bottom:1px solid var(--line)}
-header.top .wrap{display:flex;align-items:center;gap:16px;min-height:60px;flex-wrap:wrap}
-.brand{display:flex;align-items:center;gap:10px;font-weight:700;color:var(--fg);text-decoration:none}
-.brand img{width:32px;height:32px;border-radius:8px}
-nav{margin-left:auto;display:flex;gap:16px;font-size:15px;flex-wrap:wrap}
-nav a{color:var(--muted);text-decoration:none}
-nav a:hover{color:var(--accent)}
-h1{font-size:2.1rem;line-height:1.2;margin:36px 0 12px;letter-spacing:-.01em}
-h2{font-size:1.45rem;line-height:1.3;margin:40px 0 8px}
-h3{font-size:1.1rem;margin:24px 0 4px}
-p,ul,ol{margin:0 0 16px}
-li{margin-bottom:6px}
-.lead{font-size:1.15rem;color:var(--muted)}
-.cta{display:inline-block;background:var(--accent);color:var(--accent-fg);padding:13px 22px;border-radius:12px;font-weight:700;text-decoration:none;margin:6px 0}
-.cta:hover{opacity:.9}
-.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px 20px;margin:20px 0}
-.card p:last-child{margin-bottom:0}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin:18px 0}
-.grid .card{margin:0}
-.grid h3{margin-top:0}
-.meta{color:var(--muted);font-size:14px;margin-bottom:20px}
-table{border-collapse:collapse;width:100%;margin:16px 0;font-size:15px}
-th,td{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top}
-th{background:var(--card)}
-details{border-bottom:1px solid var(--line);padding:12px 0}
-summary{cursor:pointer;font-weight:600}
-details p{margin:8px 0 0}
-.weeks{display:grid;grid-template-columns:repeat(52,1fr);gap:2px;margin:18px 0}
-.weeks i{aspect-ratio:1;background:var(--accent);border-radius:1px}
-.weeks i.f{background:var(--line)}
-footer{border-top:1px solid var(--line);margin-top:56px;padding:28px 0 48px;color:var(--muted);font-size:14px}
-footer a{color:var(--muted)}
-</style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "MobileApplication", "name": "Momentum: Bloquea Reels y Apps", "alternateName": "Momentum", "operatingSystem": "Android 8.0+", "applicationCategory": "LifestyleApplication", "description": "Bloqueador de apps y redes sociales para Android: bloquea Reels y Shorts, limita el tiempo de pantalla y activa el modo enfoque.", "url": "https://danielaguilarj.github.io/momentum-app/", "inLanguage": ["es", "en", "pt", "de", "fr"], "downloadUrl": "https://play.google.com/store/apps/details?id=com.momentummm.app", "installUrl": "https://play.google.com/store/apps/details?id=com.momentummm.app", "image": "https://danielaguilarj.github.io/momentum-app/assets/icon.png", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}}</script>
-</head>
-<body>
-<header class="top"><div class="wrap">
-<a class="brand" href="https://danielaguilarj.github.io/momentum-app/"><img src="https://danielaguilarj.github.io/momentum-app/assets/icon.png" alt="" width="32" height="32">Momentum</a>
-<nav><a href="https://danielaguilarj.github.io/momentum-app/guias/">Guías</a><a href="https://danielaguilarj.github.io/momentum-app/bloquear-reels-shorts-android/">Bloquear Reels y Shorts</a><a href="https://danielaguilarj.github.io/momentum-app/en/" hreflang="en" lang="en">Español</a></nav>
-</div></header>
-<main class="wrap">
+<!DOCTYPE html><html lang="es"> <head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>Momentum: bloqueador de apps y de Reels y Shorts para Android</title><meta name="description" content="Bloquea Reels y Shorts sin bloquear toda la app, pon límites de tiempo a tus apps y reduce tu tiempo de pantalla. Gratis, sin anuncios y sin cuenta."><link rel="canonical" href="https://danielaguilarj.github.io/momentum-app/"><link rel="alternate" hreflang="es" href="https://danielaguilarj.github.io/momentum-app/"><link rel="alternate" hreflang="en" href="https://danielaguilarj.github.io/momentum-app/en/"><link rel="alternate" hreflang="x-default" href="https://danielaguilarj.github.io/momentum-app/"><meta name="theme-color" content="#07060f"><link rel="icon" href="https://danielaguilarj.github.io/momentum-app/assets/icon.png" type="image/png"><link rel="apple-touch-icon" href="https://danielaguilarj.github.io/momentum-app/assets/icon.png"><meta property="og:type" content="website"><meta property="og:site_name" content="Momentum"><meta property="og:title" content="Momentum: bloqueador de apps y de Reels y Shorts para Android"><meta property="og:description" content="Bloquea Reels y Shorts sin bloquear toda la app, pon límites de tiempo a tus apps y reduce tu tiempo de pantalla. Gratis, sin anuncios y sin cuenta."><meta property="og:url" content="https://danielaguilarj.github.io/momentum-app/"><meta property="og:image" content="https://danielaguilarj.github.io/momentum-app/assets/og.png"><meta property="og:locale" content="es_419"><meta name="twitter:card" content="summary_large_image"><script type="application/ld+json">{"@context":"https://schema.org","@type":"MobileApplication","name":"Momentum: Bloquea Reels y Apps","alternateName":"Momentum","operatingSystem":"Android 8.0+","applicationCategory":"LifestyleApplication","description":"Bloqueador de apps y redes sociales para Android: bloquea Reels y Shorts, limita el tiempo de pantalla y activa el modo enfoque.","url":"https://danielaguilarj.github.io/momentum-app/","inLanguage":["es","en","pt","de","fr"],"downloadUrl":"https://play.google.com/store/apps/details?id=com.momentummm.app","installUrl":"https://play.google.com/store/apps/details?id=com.momentummm.app","image":"https://danielaguilarj.github.io/momentum-app/assets/icon.png","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script><script>document.documentElement.classList.add("js");</script><link rel="stylesheet" href="/momentum-app/_astro/Landing.cxgmDczC.css"></head> <body> <!--
+THESIS: The infinite feed against a finite life. The page opens inside a 1 a.m. doomscroll and ends at dawn. It refuses the category default: a centred phone on a purple gradient above a grid of icon cards.
+OWN-WORLD: Night ground #07060F lit only by the phone and a WebGL river of short-video cards; a violet field for the 4,160-week grid; a dawn horizon (rose to amber) for the close. Bricolage Grotesque condensed display, Geist body, Geist Mono only for time and counts. Detection brackets are the one UI ornament.
+STORY: See the feed, watch Momentum lock onto Reels and block only that while messages stay open, see your weeks, trust the permission, install.
+FIRST VIEWPORT: Left, the two-line H1 near 6rem, lead, light pill CTA to Google Play. Right, the phone tilted in 3D over the card river.
+FORM: The brief pins a top-tier app product page in 3D (canon at full fidelity). Seed dd170b66 assigned grounded #4, the school timetable, kept as the schedule demo's grammar. Raises: viewfinder focus brackets (detection), cyclorama night-to-dawn (page colour journey), VU ballistics (feed motion with mass).
+FINISH: unreviewed and undocumented is unfinished; this build ends with the finish review, the verdict, DESIGN.md, and every shipping raster carrying its provenance
+--> <a class="skip" href="#contenido">Saltar al contenido</a>  <header class="nav" data-nav data-astro-cid-wpvy4v7s> <div class="shell nav-row" data-astro-cid-wpvy4v7s> <a class="brand" href="https://danielaguilarj.github.io/momentum-app/" aria-label="Momentum" data-astro-cid-wpvy4v7s> <img src="https://danielaguilarj.github.io/momentum-app/assets/icon.png" alt="" width="34" height="34" fetchpriority="high" data-astro-cid-wpvy4v7s> <span data-astro-cid-wpvy4v7s>Momentum</span> </a> <nav aria-label="Principal" data-astro-cid-wpvy4v7s> <a href="#funciones" data-astro-cid-wpvy4v7s>Funciones</a> <a href="#privacidad" data-astro-cid-wpvy4v7s>Privacidad</a> <a href="https://danielaguilarj.github.io/momentum-app/guias/" data-astro-cid-wpvy4v7s>Guías</a> <a href="https://danielaguilarj.github.io/momentum-app/en/" hreflang="en" lang="en" data-astro-cid-wpvy4v7s>English</a> </nav> <a class="nav-cta" href="https://play.google.com/store/apps/details?id=com.momentummm.app&amp;hl=es_419&amp;referrer=utm_source%3Dmomentum-web%26utm_medium%3Dweb%26utm_content%3Dhome-nav" rel="noopener" data-astro-cid-wpvy4v7s>Descargar</a> </div> </header> <main id="contenido"> <section class="stage" data-stage data-beat="0" aria-labelledby="hero-title" data-astro-cid-f2jc3dwf> <div class="stage-frame" data-astro-cid-f2jc3dwf> <canvas class="river" data-river aria-hidden="true" data-astro-cid-f2jc3dwf></canvas> <div class="river-fallback" aria-hidden="true" data-astro-cid-f2jc3dwf></div> <div class="shell stage-grid" data-astro-cid-f2jc3dwf> <div class="stage-copy" data-astro-cid-f2jc3dwf> <div class="hero-copy" data-astro-cid-f2jc3dwf> <h1 id="hero-title" data-astro-cid-f2jc3dwf><span data-astro-cid-f2jc3dwf>Bloquea los Reels.</span> <span class="h1-b" data-astro-cid-f2jc3dwf>Conserva la app.</span></h1> <p class="lead" data-astro-cid-f2jc3dwf>Momentum corta solo la parte que te atrapa, como los Reels de Instagram o los Shorts de YouTube, y deja tus mensajes funcionando. Gratis, sin anuncios y sin crear cuenta.</p> <div class="actions" data-astro-cid-f2jc3dwf> <a class="btn" href="https://play.google.com/store/apps/details?id=com.momentummm.app&amp;hl=es_419&amp;referrer=utm_source%3Dmomentum-web%26utm_medium%3Dweb%26utm_content%3Dhome-hero" rel="noopener" data-astro-cid-f2jc3dwf> 
+<svg aria-hidden="true" focusable="false" class="icon "
+ 
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="1.75"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M12 15V3" />
+  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+  <path d="m7 10 5 5 5-5" />
+</svg>
+Descargar gratis en Google Play </a> <a class="link-arrow" href="#como-funciona" data-astro-cid-f2jc3dwf>Ver cómo funciona
+<svg aria-hidden="true" focusable="false" class="icon "
+ 
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="1.75"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M12 5v14" />
+  <path d="m19 12-7 7-7-7" />
+</svg>
+</a> </div> <p class="hero-meta" data-astro-cid-f2jc3dwf>Android 8.0 o superior · En español, inglés, portugués, alemán y francés</p> </div> <div class="story" id="como-funciona" data-astro-cid-f2jc3dwf> <h2 class="visually-hidden" data-astro-cid-f2jc3dwf>Cómo funciona</h2> <ol class="beats" data-astro-cid-f2jc3dwf> <li class="beat" data-index="1" data-astro-cid-f2jc3dwf> <h3 data-astro-cid-f2jc3dwf>Reconoce la sección.</h3> <p data-astro-cid-f2jc3dwf>Cuando abres los Reels, los Shorts o Explorar, Momentum lo detecta en ese momento, dentro de tu teléfono.</p> </li><li class="beat" data-index="2" data-astro-cid-f2jc3dwf> <h3 data-astro-cid-f2jc3dwf>La bloquea al instante.</h3> <p data-astro-cid-f2jc3dwf>Aparece la pantalla de bloqueo o vuelves al inicio. El siguiente video ya no empieza solo.</p> </li><li class="beat" data-index="3" data-astro-cid-f2jc3dwf> <h3 data-astro-cid-f2jc3dwf>Lo demás sigue abierto.</h3> <p data-astro-cid-f2jc3dwf>Tus mensajes, tu perfil y el resto de la app funcionan como siempre.</p> </li> </ol> <div class="rail" aria-hidden="true" data-astro-cid-f2jc3dwf><i data-index="1" data-astro-cid-f2jc3dwf></i><i data-index="2" data-astro-cid-f2jc3dwf></i><i data-index="3" data-astro-cid-f2jc3dwf></i></div> </div> </div> <div class="stage-device" data-astro-cid-f2jc3dwf> <figure class="device" data-device data-astro-cid-ykln7coe> <div class="phone" data-state="feed" data-phone data-astro-cid-ykln7coe> <div class="glass" data-astro-cid-ykln7coe> <div class="status num" aria-hidden="true" data-astro-cid-ykln7coe> <span data-astro-cid-ykln7coe>1:07</span> <span class="status-icons" data-astro-cid-ykln7coe>
+<svg aria-hidden="true" focusable="false" class="icon "
+ 
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="1.75"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M2 20h.01" />
+  <path d="M7 20v-4" />
+  <path d="M12 20v-8" />
+  <path d="M17 20V8" />
+  <path d="M22 4v16" />
+</svg>
 
-<h1>Momentum: bloqueador de apps y de Reels para Android</h1>
-<p class="lead">Bloquea solo los Reels de Instagram o los Shorts de YouTube, pon límites de tiempo a tus apps y recupera tu concentración. Es gratis, no tiene anuncios y funciona sin crear cuenta.</p>
-<p><a class="cta" href="https://play.google.com/store/apps/details?id=com.momentummm.app&hl=es_419&referrer=utm_source%3Dmomentum-web%26utm_medium%3Dweb%26utm_content%3Dhome-top" rel="noopener">Descargar gratis en Google Play</a></p>
+<svg aria-hidden="true" focusable="false" class="icon "
+ 
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="1.75"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M12 20h.01" />
+  <path d="M2 8.82a15 15 0 0 1 20 0" />
+  <path d="M5 12.859a10 10 0 0 1 14 0" />
+  <path d="M8.5 16.429a5 5 0 0 1 7 0" />
+</svg>
 
-<h2>Qué puedes hacer con Momentum</h2>
-<div class="grid">
-<div class="card"><h3>Bloquear Reels y Shorts</h3><p>Apaga solo la sección que te atrapa, como los Reels de Instagram o los Shorts de YouTube, y sigue usando los mensajes y el resto de la app.</p></div>
-<div class="card"><h3>Límites de tiempo por app</h3><p>Pon un límite diario a cada app o red social. Al alcanzarlo, Momentum la bloquea.</p></div>
-<div class="card"><h3>Horarios y lugares</h3><p>Bloquea por días y horas, o según el lugar o la red Wi-Fi: en la escuela, en la oficina o en casa.</p></div>
-<div class="card"><h3>Modo enfoque y Pomodoro</h3><p>Sesiones de enfoque de 25/5 o con la duración que elijas, con metas, rachas y días de gracia.</p></div>
-<div class="card"><h3>Launcher minimalista</h3><p>Cambia tu pantalla de inicio por una interfaz simple con teléfono, mensajes y contactos, sin cambiar de teléfono.</p></div>
-<div class="card"><h3>Mi vida en semanas</h3><p>Ve tu vida como una cuadrícula de semanas, con widgets y fondo de pantalla para recordar qué importa.</p></div>
-</div>
+<svg aria-hidden="true" focusable="false" class="icon "
+ 
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="1.75"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M10 10v4" />
+  <path d="M14 10v4" />
+  <path d="M22 14v-4" />
+  <path d="M6 10v4" />
+  <rect x="2" y="6" width="16" height="12" rx="2" />
+</svg>
+</span> </div> <div class="screen screen-feed" aria-hidden="true" data-astro-cid-ykln7coe> <div class="reel-track" data-astro-cid-ykln7coe> <div class="reel reel-0" data-astro-cid-ykln7coe> <div class="reel-video" data-astro-cid-ykln7coe><i data-astro-cid-ykln7coe></i><i data-astro-cid-ykln7coe></i><i data-astro-cid-ykln7coe></i></div> <div class="reel-rail" data-astro-cid-ykln7coe> 
+<svg aria-hidden="true" focusable="false" class="icon "
+ 
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="1.75"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M2 9.5a5.5 5.5 0 0 1 9.591-3.676.56.56 0 0 0 .818 0A5.49 5.49 0 0 1 22 9.5c0 2.29-1.5 4-3 5.5l-5.492 5.313a2 2 0 0 1-3 .019L5 15c-1.5-1.5-3-3.2-3-5.5" />
+</svg>
 
-<h2>Cómo empezar en tres pasos</h2>
-<ol>
-<li><strong>Instala Momentum</strong> desde Google Play. No necesitas crear una cuenta.</li>
-<li><strong>Elige qué bloquear</strong>: una sección como Reels o Shorts, una app completa con límite diario, o un horario.</li>
-<li><strong>Activa el servicio de accesibilidad</strong> cuando la app te lo explique. Es lo que le permite saber qué app o sección tienes abierta para aplicar tus reglas.</li>
-</ol>
-<p><a class="cta" href="https://play.google.com/store/apps/details?id=com.momentummm.app&hl=es_419&referrer=utm_source%3Dmomentum-web%26utm_medium%3Dweb%26utm_content%3Dhome-steps" rel="noopener">Descargar gratis en Google Play</a></p>
+<svg aria-hidden="true" focusable="false" class="icon "
+ 
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="1.75"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M2.992 16.342a2 2 0 0 1 .094 1.167l-1.065 3.29a1 1 0 0 0 1.236 1.168l3.413-.998a2 2 0 0 1 1.099.092 10 10 0 1 0-4.777-4.719" />
+</svg>
 
-<h2>Guías para dejar el scroll infinito</h2>
-<ul><li><a href="https://danielaguilarj.github.io/momentum-app/bloquear-reels-shorts-android/">Cómo bloquear los Reels de Instagram y los Shorts de YouTube en Android</a></li><li><a href="https://danielaguilarj.github.io/momentum-app/reducir-tiempo-de-pantalla-android/">Cómo reducir el tiempo de pantalla en el celular: 8 pasos que sí funcionan</a></li><li><a href="https://danielaguilarj.github.io/momentum-app/vida-en-semanas/">Tu vida en semanas: qué es y cómo verla en tu celular</a></li><li><a href="https://danielaguilarj.github.io/momentum-app/launcher-minimalista-android/">Launcher minimalista: un celular sin distracciones, sin cambiar de teléfono</a></li><li><a href="https://danielaguilarj.github.io/momentum-app/elegir-app-para-bloquear-apps-android/">Cómo elegir una app para bloquear apps en Android (y qué evitar)</a></li><li><a href="https://danielaguilarj.github.io/momentum-app/dejar-doomscrolling/">Cómo dejar el doomscrolling: 7 tácticas que funcionan</a></li><li><a href="https://danielaguilarj.github.io/momentum-app/tecnica-pomodoro-android/">Técnica Pomodoro en Android: cómo usarla para estudiar o trabajar</a></li><li><a href="https://danielaguilarj.github.io/momentum-app/detox-digital-7-dias/">Detox digital: un plan de 7 días para empezar hoy</a></li><li><a href="https://danielaguilarj.github.io/momentum-app/limites-que-no-puedas-saltarte-android/">Cómo poner límites que no puedas saltarte en Android</a></li><li><a href="https://danielaguilarj.github.io/momentum-app/estudiar-sin-distracciones-celular/">Cómo estudiar sin que el celular te distraiga: 6 pasos</a></li></ul><p><a href="https://danielaguilarj.github.io/momentum-app/guias/">Ver todas las guías</a></p>
+<svg aria-hidden="true" focusable="false" class="icon "
+ 
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="1.75"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M14.536 21.686a.5.5 0 0 0 .937-.024l6.5-19a.496.496 0 0 0-.635-.635l-19 6.5a.5.5 0 0 0-.024.937l7.93 3.18a2 2 0 0 1 1.112 1.11z" />
+  <path d="m21.854 2.147-10.94 10.939" />
+</svg>
 
-<h2>Tu privacidad</h2>
-<p>Tus reglas de bloqueo y lo que lee el servicio de accesibilidad se quedan en tu teléfono. Momentum no lo guarda, no lo envía a ningún servidor y no lo comparte con terceros. Puedes desactivar el servicio cuando quieras en Ajustes &gt; Accesibilidad.</p>
+<svg aria-hidden="true" focusable="false" class="icon "
+ 
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="1.75"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <circle cx="12" cy="12" r="1" />
+  <circle cx="12" cy="5" r="1" />
+  <circle cx="12" cy="19" r="1" />
+</svg>
+ </div> <div class="reel-caption" data-astro-cid-ykln7coe> <span class="avatar" data-astro-cid-ykln7coe></span> <span class="bars" data-astro-cid-ykln7coe><b data-astro-cid-ykln7coe></b><b data-astro-cid-ykln7coe></b></span> <span class="audio" data-astro-cid-ykln7coe>
+<svg aria-hidden="true" focusable="false" class="icon "
+ 
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="1.75"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="m19 6-5.2-3.9a.5.5 0 0 0-.8.4V18" />
+  <circle cx="9" cy="18" r="4" />
+</svg>
+Audio original</span> </div> <div class="reel-progress" data-astro-cid-ykln7coe><span data-astro-cid-ykln7coe></span></div> </div><div class="reel reel-1" data-astro-cid-ykln7coe> <div class="reel-video" data-astro-cid-ykln7coe><i data-astro-cid-ykln7coe></i><i data-astro-cid-ykln7coe></i><i data-astro-cid-ykln7coe></i></div> <div class="reel-rail" data-astro-cid-ykln7coe> 
+<svg aria-hidden="true" focusable="false" class="icon "
+ 
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="1.75"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M2 9.5a5.5 5.5 0 0 1 9.591-3.676.56.56 0 0 0 .818 0A5.49 5.49 0 0 1 22 9.5c0 2.29-1.5 4-3 5.5l-5.492 5.313a2 2 0 0 1-3 .019L5 15c-1.5-1.5-3-3.2-3-5.5" />
+</svg>
 
-<h2>Preguntas frecuentes</h2>
-<details><summary>¿Momentum es gratis?</summary><p>Sí. Todas las funciones están disponibles sin pago y la app no muestra anuncios.</p></details>
-<details><summary>¿Necesito crear una cuenta?</summary><p>No. Puedes usar Momentum sin crear cuenta.</p></details>
-<details><summary>¿Puedo bloquear solo los Reels sin bloquear todo Instagram?</summary><p>Sí. Momentum puede bloquear únicamente la sección de Reels de Instagram o los Shorts de YouTube, y dejarte usar los mensajes y el resto de la app. También tiene un modo solo comunicación que permite mensajes y bloquea feeds, historias y reels.</p></details>
-<details><summary>¿Por qué pide el permiso de accesibilidad?</summary><p>Android solo permite detectar qué app o sección tienes abierta a través del servicio de accesibilidad. Momentum lo usa únicamente para aplicar tus reglas: cuando una coincide, muestra la pantalla de bloqueo o vuelve al inicio. El servicio solo se activa si lo aceptas en el aviso de la app y lo enciendes en los ajustes de Android.</p></details>
-<details><summary>¿Y si quiero quitar el bloqueo en un momento de tentación?</summary><p>Puedes proteger tus reglas con contraseña y usar un desbloqueo de emergencia. Además existe el modo nuclear, el bloqueo más fuerte: bloquea las apps que elijas durante 1 a 3 meses, y para quitarlo antes de tiempo hay que mantener Momentum abierto y visible durante una espera larga y seguida (30 minutos por defecto).</p></details>
-<details><summary>¿Momentum es una herramienta de accesibilidad para personas con discapacidad?</summary><p>No. Usa el servicio de accesibilidad de Android solo para sus funciones de bloqueo.</p></details>
-<details><summary>¿Está afiliada a Instagram, YouTube o TikTok?</summary><p>No. Momentum es independiente y no tiene relación con esas apps.</p></details>
-<p><a class="cta" href="https://play.google.com/store/apps/details?id=com.momentummm.app&hl=es_419&referrer=utm_source%3Dmomentum-web%26utm_medium%3Dweb%26utm_content%3Dhome-bottom" rel="noopener">Descargar gratis en Google Play</a></p>
+<svg aria-hidden="true" focusable="false" class="icon "
+ 
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="1.75"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M2.992 16.342a2 2 0 0 1 .094 1.167l-1.065 3.29a1 1 0 0 0 1.236 1.168l3.413-.998a2 2 0 0 1 1.099.092 10 10 0 1 0-4.777-4.719" />
+</svg>
 
-</main>
-<footer><div class="wrap">
-<p>Momentum no está afiliado a Instagram, YouTube, TikTok ni a ninguna otra app que permite bloquear. Las marcas pertenecen a sus dueños.</p>
-<p><a href="https://github.com/AndreaAguilarJ/InTime">GitHub</a></p>
-</div></footer>
-</body>
-</html>
+<svg aria-hidden="true" focusable="false" class="icon "
+ 
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="1.75"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M14.536 21.686a.5.5 0 0 0 .937-.024l6.5-19a.496.496 0 0 0-.635-.635l-19 6.5a.5.5 0 0 0-.024.937l7.93 3.18a2 2 0 0 1 1.112 1.11z" />
+  <path d="m21.854 2.147-10.94 10.939" />
+</svg>
+
+<svg aria-hidden="true" focusable="false" class="icon "
+ 
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="1.75"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <circle cx="12" cy="12" r="1" />
+  <circle cx="12" cy="5" r="1" />
+  <circle cx="12" cy="19" r="1" />
+</svg>
+ </div> <div class="reel-caption" data-astro-cid-ykln7coe> <span class="avatar" data-astro-cid-ykln7coe></span> <span class="bars" data-astro-cid-ykln7coe><b data-astro-cid-ykln7coe></b><b data-astro-cid-ykln7coe></b></span> <span class="audio" data-astro-cid-ykln7coe>
+<svg aria-hidden="true" focusable="false" class="icon "
+ 
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="1.75"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="m19 6-5.2-3.9a.5.5 0 0 0-.8.4V18" />
+  <circle cx="9" cy="18" r="4" />
+</svg>
+Audio original</span> </div> <div class="reel-progress" data-astro-cid-ykln7coe><span data-astro-cid-ykln7coe></span></div> </div><div class="reel reel-2" data-astro-cid-ykln7coe> <div class="reel-video" data-astro-cid-ykln7coe><i data-astro-cid-ykln7coe></i><i data-astro-cid-ykln7coe></i><i data-astro-cid-ykln7coe></i></div> <div class="reel-rail" data-astro-cid-ykln7coe> 
+<svg aria-hidden="true" focusable="false" class="icon "
+ 
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="1.75"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M2 9.5a5.5 5.5 0 0 1 9.591-3.676.56.56 0 0 0 .818 0A5.49 5.49 0 0 1 22 9.5c0 2.29-1.5 4-3 5.5l-5.492 5.313a2 2 0 0 1-3 .019L5 15c-1.5-1.5-3-3.2-3-5.5" />
+</svg>
+
+<svg aria-hidden="true" focusable="false" class="icon "
+ 
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="1.75"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M2.992 16.342a2 2 0 0 1 .094 1.167l-1.065 3.29a1 1 0 0 0 1.236 1.168l3.413-.998a2 2 0 0 1 1.099.092 10 10 0 1 0-4.777-4.719" />
+</svg>
+
+<svg aria-hidden="true" focusable="false" class="icon "
+ 
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="1.75"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M14.536 21.686a.5.5 0 0 0 .937-.024l6.5-19a.496.496 0 0 0-.635-.635l-19 6.5a.5.5 0 0 0-.024.937l7.93 3.18a2 2 0 0 1 1.112 1.11z" />
+  <path d="m21.854 2.147-10.94 10.939" />
+</svg>
+
+<svg aria-hidden="true" focusable="false" class="icon "
+ 
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="1.75"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <circle cx="12" cy="12" r="1" />
+  <circle cx="12" cy="5" r="1" />
+  <circle cx="12" cy="19" r="1" />
+</svg>
+ </div> <div class="reel-caption" data-astro-cid-ykln7coe> <span class="avatar" data-astro-cid-ykln7coe></span> <span class="bars" data-astro-cid-ykln7coe><b data-astro-cid-ykln7coe></b><b data-astro-cid-ykln7coe></b></span> <span class="audio" data-astro-cid-ykln7coe>
+<svg aria-hidden="true" focusable="false" class="icon "
+ 
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="1.75"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="m19 6-5.2-3.9a.5.5 0 0 0-.8.4V18" />
+  <circle cx="9" cy="18" r="4" />
+</svg>
+Audio original</span> </div> <div class="reel-progress" data-astro-cid-ykln7coe><span data-astro-cid-ykln7coe></span></div> </div><div class="reel reel-3" data-astro-cid-ykln7coe> <div class="reel-video" data-astro-cid-ykln7coe><i data-astro-cid-ykln7coe></i><i data-astro-cid-ykln7coe></i><i data-astro-cid-ykln7coe></i></div> <div class="reel-rail" data-astro-cid-ykln7coe> 
+<svg aria-hidden="true" focusable="false" class="icon "
+ 
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="1.75"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M2 9.5a5.5 5.5 0 0 1 9.591-3.676.56.56 0 0 0 .818 0A5.49 5.49 0 0 1 22 9.5c0 2.29-1.5 4-3 5.5l-5.492 5.313a2 2 0 0 1-3 .019L5 15c-1.5-1.5-3-3.2-3-5.5" />
+</svg>
+
+<svg aria-hidden="true" focusable="false" class="icon "
+ 
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="1.75"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M2.992 16.342a2 2 0 0 1 .094 1.167l-1.065 3.29a1 1 0 0 0 1.236 1.168l3.413-.998a2 2 0 0 1 1.099.092 10 10 0 1 0-4.777-4.719" />
+</svg>
+
+<svg aria-hidden="true" focusable="false" class="icon "
+ 
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="1.75"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M14.536 21.686a.5.5 0 0 0 .937-.024l6.5-19a.496.496 0 0 0-.635-.635l-19 6.5a.5.5 0 0 0-.024.937l7.93 3.18a2 2 0 0 1 1.112 1.11z" />
+  <path d="m21.854 2.147-10.94 10.939" />
+</svg>
+
+<svg aria-hidden="true" focusable="false" class="icon "
+ 
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="1.75"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <circle cx="12" cy="12" r="1" />
+  <circle cx="12" cy="5" r="1" />
+  <circle cx="12" cy="19" r="1" />
+</svg>
+ </div> <div class="reel-caption" data-astro-cid-ykln7coe> <span class="avatar" data-astro-cid-ykln7coe></span> <span class="bars" data-astro-cid-ykln7coe><b data-astro-cid-ykln7coe></b><b data-astro-cid-ykln7coe></b></span> <span class="audio" data-astro-cid-ykln7coe>
+<svg aria-hidden="true" focusable="false" class="icon "
+ 
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="1.75"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="m19 6-5.2-3.9a.5.5 0 0 0-.8.4V18" />
+  <circle cx="9" cy="18" r="4" />
+</svg>
+Audio original</span> </div> <div class="reel-progress" data-astro-cid-ykln7coe><span data-astro-cid-ykln7coe></span></div> </div><div class="reel reel-0" data-astro-cid-ykln7coe> <div class="reel-video" data-astro-cid-ykln7coe><i data-astro-cid-ykln7coe></i><i data-astro-cid-ykln7coe></i><i data-astro-cid-ykln7coe></i></div> <div class="reel-rail" data-astro-cid-ykln7coe> 
+<svg aria-hidden="true" focusable="false" class="icon "
+ 
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="1.75"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M2 9.5a5.5 5.5 0 0 1 9.591-3.676.56.56 0 0 0 .818 0A5.49 5.49 0 0 1 22 9.5c0 2.29-1.5 4-3 5.5l-5.492 5.313a2 2 0 0 1-3 .019L5 15c-1.5-1.5-3-3.2-3-5.5" />
+</svg>
+
+<svg aria-hidden="true" focusable="false" class="icon "
+ 
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="1.75"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M2.992 16.342a2 2 0 0 1 .094 1.167l-1.065 3.29a1 1 0 0 0 1.236 1.168l3.413-.998a2 2 0 0 1 1.099.092 10 10 0 1 0-4.777-4.719" />
+</svg>
+
+<svg aria-hidden="true" focusable="false" class="icon "
+ 
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="1.75"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M14.536 21.686a.5.5 0 0 0 .937-.024l6.5-19a.496.496 0 0 0-.635-.635l-19 6.5a.5.5 0 0 0-.024.937l7.93 3.18a2 2 0 0 1 1.112 1.11z" />
+  <path d="m21.854 2.147-10.94 10.939" />
+</svg>
+
+<svg aria-hidden="true" focusable="false" class="icon "
+ 
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="1.75"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <circle cx="12" cy="12" r="1" />
+  <circle cx="12" cy="5" r="1" />
+  <circle cx="12" cy="19" r="1" />
+</svg>
+ </div> <div class="reel-caption" data-astro-cid-ykln7coe> <span class="avatar" data-astro-cid-ykln7coe></span> <span class="bars" data-astro-cid-ykln7coe><b data-astro-cid-ykln7coe></b><b data-astro-cid-ykln7coe></b></span> <span class="audio" data-astro-cid-ykln7coe>
+<svg aria-hidden="true" focusable="false" class="icon "
+ 
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="1.75"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="m19 6-5.2-3.9a.5.5 0 0 0-.8.4V18" />
+  <circle cx="9" cy="18" r="4" />
+</svg>
+Audio original</span> </div> <div class="reel-progress" data-astro-cid-ykln7coe><span data-astro-cid-ykln7coe></span></div> </div> </div> <div class="feed-tabs" data-astro-cid-ykln7coe><span class="on" data-astro-cid-ykln7coe>Para ti</span><span data-astro-cid-ykln7coe>Siguiendo</span></div> </div> <div class="brackets" aria-hidden="true" data-astro-cid-ykln7coe> <i class="tl" data-astro-cid-ykln7coe></i><i class="tr" data-astro-cid-ykln7coe></i><i class="bl" data-astro-cid-ykln7coe></i><i class="br" data-astro-cid-ykln7coe></i> <span class="tag num" data-astro-cid-ykln7coe>Reels · detectado</span> </div> <div class="screen screen-block" aria-hidden="true" data-astro-cid-ykln7coe> <div class="block-mark" data-astro-cid-ykln7coe>
+<svg aria-hidden="true" focusable="false" class="icon "
+ 
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="1.75"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <circle cx="12" cy="16" r="1" />
+  <rect x="3" y="10" width="18" height="12" rx="2" />
+  <path d="M7 10V7a5 5 0 0 1 10 0v3" />
+</svg>
+</div> <p class="block-title" data-astro-cid-ykln7coe>Reels bloqueado</p> <p class="block-text" data-astro-cid-ykln7coe>Tus mensajes siguen disponibles.</p> <span class="block-btn" data-astro-cid-ykln7coe>Volver al inicio</span> <span class="block-brand" data-astro-cid-ykln7coe>Momentum</span> </div> <div class="screen screen-inbox" aria-hidden="true" data-astro-cid-ykln7coe> <div class="inbox-head" data-astro-cid-ykln7coe>
+<svg aria-hidden="true" focusable="false" class="icon "
+ 
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="1.75"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="m12 19-7-7 7-7" />
+  <path d="M19 12H5" />
+</svg>
+<span data-astro-cid-ykln7coe>Mensajes</span>
+<svg aria-hidden="true" focusable="false" class="icon "
+ 
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="1.75"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M13.997 4a2 2 0 0 1 1.76 1.05l.486.9A2 2 0 0 0 18.003 7H20a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2h1.997a2 2 0 0 0 1.759-1.048l.489-.904A2 2 0 0 1 10.004 4z" />
+  <circle cx="12" cy="13" r="3" />
+</svg>
+</div> <ul data-astro-cid-ykln7coe> <li data-astro-cid-ykln7coe> <span class="ava ava-0" data-astro-cid-ykln7coe>M</span> <span class="chat" data-astro-cid-ykln7coe><b data-astro-cid-ykln7coe>Mamá</b><span data-astro-cid-ykln7coe>¿Llegas a cenar?</span></span> <span class="dot" data-astro-cid-ykln7coe></span> </li><li data-astro-cid-ykln7coe> <span class="ava ava-1" data-astro-cid-ykln7coe>E</span> <span class="chat" data-astro-cid-ykln7coe><b data-astro-cid-ykln7coe>Equipo del proyecto</b><span data-astro-cid-ykln7coe>Ya subí la presentación</span></span> <span class="dot" data-astro-cid-ykln7coe></span> </li><li data-astro-cid-ykln7coe> <span class="ava ava-2" data-astro-cid-ykln7coe>A</span> <span class="chat" data-astro-cid-ykln7coe><b data-astro-cid-ykln7coe>Ana</b><span data-astro-cid-ykln7coe>Jaja sí, mañana te cuento</span></span> <span class="dot" data-astro-cid-ykln7coe></span> </li><li data-astro-cid-ykln7coe> <span class="ava ava-3" data-astro-cid-ykln7coe>L</span> <span class="chat" data-astro-cid-ykln7coe><b data-astro-cid-ykln7coe>Luis</b><span data-astro-cid-ykln7coe>¿Vamos al gimnasio a las 7?</span></span> <span class="dot" data-astro-cid-ykln7coe></span> </li> </ul> </div> <nav class="appbar" aria-hidden="true" data-astro-cid-ykln7coe> 
+<svg aria-hidden="true" focusable="false" class="icon "
+ 
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="1.75"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8" />
+  <path d="M3 10a2 2 0 0 1 .709-1.528l7-6a2 2 0 0 1 2.582 0l7 6A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+</svg>
+
+<svg aria-hidden="true" focusable="false" class="icon "
+ 
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="1.75"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="m21 21-4.34-4.34" />
+  <circle cx="11" cy="11" r="8" />
+</svg>
+<span class="reels-tab" data-astro-cid-ykln7coe>
+<svg aria-hidden="true" focusable="false" class="icon "
+ 
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="1.75"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="m12.296 3.464 3.02 3.956" />
+  <path d="M20.2 6 3 11l-.9-2.4c-.3-1.1.3-2.2 1.3-2.5l13.5-4c1.1-.3 2.2.3 2.5 1.3z" />
+  <path d="M3 11h18v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+  <path d="m6.18 5.276 3.1 3.899" />
+</svg>
+</span><span class="msg-tab" data-astro-cid-ykln7coe>
+<svg aria-hidden="true" focusable="false" class="icon "
+ 
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="1.75"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M2.992 16.342a2 2 0 0 1 .094 1.167l-1.065 3.29a1 1 0 0 0 1.236 1.168l3.413-.998a2 2 0 0 1 1.099.092 10 10 0 1 0-4.777-4.719" />
+</svg>
+</span>
+<svg aria-hidden="true" focusable="false" class="icon "
+ 
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="1.75"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2" />
+  <circle cx="12" cy="7" r="4" />
+</svg>
+ </nav> </div> </div> <figcaption data-astro-cid-ykln7coe>Pantalla simulada</figcaption> </figure> </div> </div> </div> </section> <section class="weeks" aria-labelledby="weeks-title" data-weeks data-astro-cid-fwa46pns> <div class="weeks-canvas-wrap" data-astro-cid-fwa46pns> <canvas class="weeks-canvas" data-weeks-canvas role="img" aria-label="Cuadrícula de 4,160 semanas: 52 columnas por año y 80 filas, una por cada año de vida" data-astro-cid-fwa46pns></canvas> </div> <div class="shell weeks-grid" data-astro-cid-fwa46pns> <div class="weeks-copy" data-astro-cid-fwa46pns> <h2 id="weeks-title" data-astro-cid-fwa46pns>Una vida de 80 años cabe en 4,160 semanas.</h2> <p class="lead" data-astro-cid-fwa46pns>Momentum te muestra la tuya en una cuadrícula, dentro de la app, en widgets y como fondo de pantalla. Cuesta más regalarle una semana al scroll cuando la ves.</p> <div class="age" data-astro-cid-fwa46pns> <label for="age-input" data-astro-cid-fwa46pns>Tu edad</label> <div class="age-row" data-astro-cid-fwa46pns> <input id="age-input" type="range" min="1" max="79" value="25" data-age data-astro-cid-fwa46pns> <output for="age-input" class="num age-value" data-age-out data-astro-cid-fwa46pns>25</output> </div> <p class="tally num" aria-live="polite" data-astro-cid-fwa46pns> <span data-astro-cid-fwa46pns><b data-lived data-astro-cid-fwa46pns>1,300</b> semanas vividas</span> <span data-astro-cid-fwa46pns><b data-left data-astro-cid-fwa46pns>2,860</b> por delante</span> </p> <p class="note" data-astro-cid-fwa46pns>Cálculo aproximado sobre una vida de 80 años.</p> </div> </div> </div> </section> <section class="features" id="funciones" aria-labelledby="features-title" data-astro-cid-cognygiv> <div class="shell" data-astro-cid-cognygiv> <header class="head" data-astro-cid-cognygiv> <h2 id="features-title" data-astro-cid-cognygiv>Barreras que no dependen de tu fuerza de voluntad.</h2> <p class="lead" data-astro-cid-cognygiv>Tú eliges cuánto, cuándo y dónde. Momentum se encarga de cumplirlo.</p> </header> <div class="row" data-astro-cid-cognygiv> <div class="text" data-astro-cid-cognygiv> <h3 data-astro-cid-cognygiv>Un límite diario para cada app</h3> <p data-astro-cid-cognygiv>Ponle minutos a cada app o red social. Al llegar al límite, Momentum la bloquea hasta el día siguiente.</p> </div> <div class="demo demo-limits" aria-hidden="true" data-astro-cid-cognygiv> <p class="demo-label" data-astro-cid-cognygiv>Hoy</p> <ul data-astro-cid-cognygiv> <li class style="--v:77%" data-astro-cid-cognygiv> <span class="mono-tile" data-astro-cid-cognygiv>I</span> <span class="app-name" data-astro-cid-cognygiv>Instagram</span> <span class="app-time num" data-astro-cid-cognygiv> 23 de 30 min </span> <span class="bar" data-astro-cid-cognygiv><span data-astro-cid-cognygiv></span></span> </li><li class="full" style="--v:100%" data-astro-cid-cognygiv> <span class="mono-tile" data-astro-cid-cognygiv>Y</span> <span class="app-name" data-astro-cid-cognygiv>YouTube</span> <span class="app-time num" data-astro-cid-cognygiv> <span class="chip" data-astro-cid-cognygiv>
+<svg aria-hidden="true" focusable="false" class="icon "
+ 
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="1.75"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <circle cx="12" cy="16" r="1" />
+  <rect x="3" y="10" width="18" height="12" rx="2" />
+  <path d="M7 10V7a5 5 0 0 1 10 0v3" />
+</svg>
+Bloqueada</span> </span> <span class="bar" data-astro-cid-cognygiv><span data-astro-cid-cognygiv></span></span> </li><li class style="--v:40%" data-astro-cid-cognygiv> <span class="mono-tile" data-astro-cid-cognygiv>T</span> <span class="app-name" data-astro-cid-cognygiv>TikTok</span> <span class="app-time num" data-astro-cid-cognygiv> 6 de 15 min </span> <span class="bar" data-astro-cid-cognygiv><span data-astro-cid-cognygiv></span></span> </li><li class style="--v:20%" data-astro-cid-cognygiv> <span class="mono-tile" data-astro-cid-cognygiv>X</span> <span class="app-name" data-astro-cid-cognygiv>X</span> <span class="app-time num" data-astro-cid-cognygiv> 2 de 10 min </span> <span class="bar" data-astro-cid-cognygiv><span data-astro-cid-cognygiv></span></span> </li> </ul> </div> </div> <div class="row flip" data-astro-cid-cognygiv> <div class="text" data-astro-cid-cognygiv> <h3 data-astro-cid-cognygiv>Horarios y lugares</h3> <p data-astro-cid-cognygiv>Bloquea por días y horas, o según el lugar o la red Wi‑Fi: en clase, en la oficina o en casa.</p> </div> <div class="demo demo-schedule" aria-hidden="true" data-astro-cid-cognygiv> <div class="tt" data-astro-cid-cognygiv> <div class="tt-hours num" data-astro-cid-cognygiv><span data-astro-cid-cognygiv>0</span><span data-astro-cid-cognygiv>6</span><span data-astro-cid-cognygiv>12</span><span data-astro-cid-cognygiv>18</span><span data-astro-cid-cognygiv>24</span></div> <div class="tt-body" data-astro-cid-cognygiv> <div class="tt-days" data-astro-cid-cognygiv><span data-astro-cid-cognygiv>L</span><span data-astro-cid-cognygiv>M</span><span data-astro-cid-cognygiv>M</span><span data-astro-cid-cognygiv>J</span><span data-astro-cid-cognygiv>V</span><span data-astro-cid-cognygiv>S</span><span data-astro-cid-cognygiv>D</span></div> <div class="tt-grid" data-astro-cid-cognygiv> <span class="tt-block sleep" style="--l:0%;--w:100%;--top:0%;--h:29.166666666666668%" data-astro-cid-cognygiv> Dormir </span><span class="tt-block sleep" style="--l:0%;--w:100%;--top:95.83333333333334%;--h:4.166666666666666%" data-astro-cid-cognygiv>  </span><span class="tt-block classes" style="--l:0%;--w:71.42857142857143%;--top:33.33333333333333%;--h:25%" data-astro-cid-cognygiv> Clases </span> </div> </div> </div> <p class="wifi-rule" data-astro-cid-cognygiv>
+<svg aria-hidden="true" focusable="false" class="icon "
+ 
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="1.75"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M12 20h.01" />
+  <path d="M2 8.82a15 15 0 0 1 20 0" />
+  <path d="M5 12.859a10 10 0 0 1 14 0" />
+  <path d="M8.5 16.429a5 5 0 0 1 7 0" />
+</svg>
+<span data-astro-cid-cognygiv>Wi‑Fi de casa</span>
+<svg aria-hidden="true" focusable="false" class="icon "
+ 
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="1.75"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M5 12h14" />
+  <path d="m12 5 7 7-7 7" />
+</svg>
+<b data-astro-cid-cognygiv>Modo enfoque</b></p> </div> </div> <div class="row" data-astro-cid-cognygiv> <div class="text" data-astro-cid-cognygiv> <h3 data-astro-cid-cognygiv>Modo enfoque con Pomodoro</h3> <p data-astro-cid-cognygiv>Sesiones de 25/5 o de la duración que elijas, con metas, rachas y días de gracia para que un mal día no rompa tu racha.</p> </div> <div class="demo demo-focus" aria-hidden="true" data-focus data-astro-cid-cognygiv> <p class="demo-label" data-astro-cid-cognygiv>Sesión de enfoque</p> <p class="clock num" data-clock data-astro-cid-cognygiv>25:00</p> <div class="ticks" data-ticks data-astro-cid-cognygiv><i data-astro-cid-cognygiv></i><i data-astro-cid-cognygiv></i><i data-astro-cid-cognygiv></i><i data-astro-cid-cognygiv></i><i data-astro-cid-cognygiv></i><i data-astro-cid-cognygiv></i><i data-astro-cid-cognygiv></i><i data-astro-cid-cognygiv></i><i data-astro-cid-cognygiv></i><i data-astro-cid-cognygiv></i><i data-astro-cid-cognygiv></i><i data-astro-cid-cognygiv></i><i data-astro-cid-cognygiv></i><i data-astro-cid-cognygiv></i><i data-astro-cid-cognygiv></i><i data-astro-cid-cognygiv></i><i data-astro-cid-cognygiv></i><i data-astro-cid-cognygiv></i><i data-astro-cid-cognygiv></i><i data-astro-cid-cognygiv></i><i data-astro-cid-cognygiv></i><i data-astro-cid-cognygiv></i><i data-astro-cid-cognygiv></i><i data-astro-cid-cognygiv></i><i data-astro-cid-cognygiv></i></div> <div class="streak" data-astro-cid-cognygiv> <span class="streak-label" data-astro-cid-cognygiv>Racha <b class="num" data-astro-cid-cognygiv>6 días</b></span> <span class="dots" data-astro-cid-cognygiv><i class data-astro-cid-cognygiv></i><i class data-astro-cid-cognygiv></i><i class data-astro-cid-cognygiv></i><i class data-astro-cid-cognygiv></i><i class data-astro-cid-cognygiv></i><i class data-astro-cid-cognygiv></i><i class="today" data-astro-cid-cognygiv></i></span> </div> <p class="grace" data-astro-cid-cognygiv>1 día de gracia disponible</p> </div> </div> <div class="more" data-astro-cid-cognygiv> <h3 data-astro-cid-cognygiv>Y además</h3> <dl data-astro-cid-cognygiv> <div data-astro-cid-cognygiv> <dt data-astro-cid-cognygiv>
+<svg aria-hidden="true" focusable="false" class="icon "
+ 
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="1.75"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M2.992 16.342a2 2 0 0 1 .094 1.167l-1.065 3.29a1 1 0 0 0 1.236 1.168l3.413-.998a2 2 0 0 1 1.099.092 10 10 0 1 0-4.777-4.719" />
+</svg>
+Solo comunicación</dt> <dd data-astro-cid-cognygiv>Permite los mensajes y bloquea feeds, historias y reels.</dd> </div><div data-astro-cid-cognygiv> <dt data-astro-cid-cognygiv>
+<svg aria-hidden="true" focusable="false" class="icon "
+ 
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="1.75"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M12 12h.01" />
+  <path d="M14 15.4641a4 4 0 0 1-4 0L7.52786 19.74597 A 1 1 0 0 0 7.99303 21.16211 10 10 0 0 0 16.00697 21.16211 1 1 0 0 0 16.47214 19.74597z" />
+  <path d="M16 12a4 4 0 0 0-2-3.464l2.472-4.282a1 1 0 0 1 1.46-.305 10 10 0 0 1 4.006 6.94A1 1 0 0 1 21 12z" />
+  <path d="M8 12a4 4 0 0 1 2-3.464L7.528 4.254a1 1 0 0 0-1.46-.305 10 10 0 0 0-4.006 6.94A1 1 0 0 0 3 12z" />
+</svg>
+Modo nuclear</dt> <dd data-astro-cid-cognygiv>El bloqueo más fuerte, de 1 a 3 meses. Quitarlo antes exige una espera seguida con Momentum abierto, de 30 minutos por defecto.</dd> </div><div data-astro-cid-cognygiv> <dt data-astro-cid-cognygiv>
+<svg aria-hidden="true" focusable="false" class="icon "
+ 
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="1.75"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M2.586 17.414A2 2 0 0 0 2 18.828V21a1 1 0 0 0 1 1h3a1 1 0 0 0 1-1v-1a1 1 0 0 1 1-1h1a1 1 0 0 0 1-1v-1a1 1 0 0 1 1-1h.172a2 2 0 0 0 1.414-.586l.814-.814a6.5 6.5 0 1 0-4-4z" />
+  <circle cx="16.5" cy="7.5" r=".5" fill="currentColor" />
+</svg>
+Contraseña y emergencia</dt> <dd data-astro-cid-cognygiv>Protege tus reglas con contraseña y guarda un desbloqueo de emergencia.</dd> </div><div data-astro-cid-cognygiv> <dt data-astro-cid-cognygiv>
+<svg aria-hidden="true" focusable="false" class="icon "
+ 
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="1.75"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <circle cx="12" cy="12" r="10" />
+  <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20" />
+  <path d="M2 12h20" />
+</svg>
+Sitios web</dt> <dd data-astro-cid-cognygiv>Bloquea las páginas que te distraen en los navegadores compatibles.</dd> </div><div data-astro-cid-cognygiv> <dt data-astro-cid-cognygiv>
+<svg aria-hidden="true" focusable="false" class="icon "
+ 
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="1.75"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <rect width="14" height="20" x="5" y="2" rx="2" ry="2" />
+  <path d="M12 18h.01" />
+</svg>
+Launcher minimalista</dt> <dd data-astro-cid-cognygiv>Una pantalla de inicio simple, con teléfono, mensajes y contactos.</dd> </div> </dl> </div> </div> </section> <section class="privacy" id="privacidad" aria-labelledby="privacy-title" data-astro-cid-wtzqjce7> <div class="shell privacy-grid" data-astro-cid-wtzqjce7> <div data-astro-cid-wtzqjce7> <h2 id="privacy-title" data-astro-cid-wtzqjce7>El permiso de accesibilidad, sin letra chica.</h2> <p class="lead" data-astro-cid-wtzqjce7>Android solo deja saber qué app o sección tienes abierta a través del servicio de accesibilidad. Antes de pedirlo, Momentum te muestra un aviso. Este es un extracto, con sus palabras exactas:</p> <ul class="points" data-astro-cid-wtzqjce7> <li data-astro-cid-wtzqjce7>
+<svg aria-hidden="true" focusable="false" class="icon "
+ 
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="1.75"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z" />
+  <path d="m9 12 2 2 4-4" />
+</svg>
+<span data-astro-cid-wtzqjce7><b data-astro-cid-wtzqjce7>Se analiza en tu teléfono.</b> Nada de lo que ves se envía a un servidor.</span></li><li data-astro-cid-wtzqjce7>
+<svg aria-hidden="true" focusable="false" class="icon "
+ 
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="1.75"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z" />
+  <path d="m9 12 2 2 4-4" />
+</svg>
+<span data-astro-cid-wtzqjce7><b data-astro-cid-wtzqjce7>No se guarda ni se comparte.</b> Ni lo que ves ni lo que escribes.</span></li><li data-astro-cid-wtzqjce7>
+<svg aria-hidden="true" focusable="false" class="icon "
+ 
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="1.75"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z" />
+  <path d="m9 12 2 2 4-4" />
+</svg>
+<span data-astro-cid-wtzqjce7><b data-astro-cid-wtzqjce7>Lo apagas cuando quieras.</b> En Ajustes de Android &gt; Accesibilidad.</span></li> </ul> </div> <figure class="dialog-wrap" data-astro-cid-wtzqjce7> <div class="dialog" role="presentation" data-astro-cid-wtzqjce7> <p class="dialog-title" data-astro-cid-wtzqjce7>Uso del servicio de accesibilidad</p> <p data-astro-cid-wtzqjce7>Momentum usa la API AccessibilityService de Android para bloquear las apps, las secciones dentro de las apps (como Reels o Shorts) y los sitios web que tú eliges, en el momento en que los abres.</p> <p class="dialog-sub" data-astro-cid-wtzqjce7>Qué datos lee</p> <ul data-astro-cid-wtzqjce7><li data-astro-cid-wtzqjce7>Qué app está abierta en la pantalla.</li><li data-astro-cid-wtzqjce7>El contenido de la pantalla de las apps en las que configuras un bloqueo, para reconocer secciones como Reels o Shorts.</li></ul> <p class="dialog-sub" data-astro-cid-wtzqjce7>Para qué los usa</p> <p data-astro-cid-wtzqjce7>Se analizan en tu teléfono en el momento. Momentum no guarda lo que ves ni lo que escribes, no lo envía a ningún servidor y no lo comparte con nadie.</p> <div class="dialog-actions" data-astro-cid-wtzqjce7> <span class="text-btn" data-astro-cid-wtzqjce7>No, gracias</span> <span class="fill-btn" data-astro-cid-wtzqjce7>Aceptar y continuar</span> </div> </div> <figcaption data-astro-cid-wtzqjce7>Extracto del aviso que muestra la app.</figcaption> </figure> </div> </section> <section class="compare" aria-labelledby="compare-title" data-astro-cid-wtzqjce7> <div class="shell" data-astro-cid-wtzqjce7> <h2 id="compare-title" data-astro-cid-wtzqjce7>Lo que ya trae tu teléfono, y lo que le falta.</h2> <div class="table-wrap" tabindex="0" role="region" aria-labelledby="compare-title" data-astro-cid-wtzqjce7> <table data-astro-cid-wtzqjce7> <thead data-astro-cid-wtzqjce7> <tr data-astro-cid-wtzqjce7><td data-astro-cid-wtzqjce7></td><th scope="col" class data-astro-cid-wtzqjce7>Bienestar digital de Android</th><th scope="col" class data-astro-cid-wtzqjce7>Temporizador de Shorts de YouTube</th><th scope="col" class="us" data-astro-cid-wtzqjce7>Momentum</th></tr> </thead> <tbody data-astro-cid-wtzqjce7> <tr data-astro-cid-wtzqjce7> <th scope="row" data-astro-cid-wtzqjce7>Bloquea solo Reels o Shorts</th> <td data-astro-cid-wtzqjce7>No, bloquea toda la app</td> <td data-astro-cid-wtzqjce7>Solo los Shorts de YouTube</td> <td class="us" data-astro-cid-wtzqjce7>
+<svg aria-hidden="true" focusable="false" class="icon "
+ 
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="1.75"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M20 6 9 17l-5-5" />
+</svg>
+Sí, en varias apps</td> </tr><tr data-astro-cid-wtzqjce7> <th scope="row" data-astro-cid-wtzqjce7>Tus mensajes siguen funcionando</th> <td data-astro-cid-wtzqjce7>No, se bloquean con la app</td> <td data-astro-cid-wtzqjce7>No aplica</td> <td class="us" data-astro-cid-wtzqjce7>
+<svg aria-hidden="true" focusable="false" class="icon "
+ 
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="1.75"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M20 6 9 17l-5-5" />
+</svg>
+Sí</td> </tr><tr data-astro-cid-wtzqjce7> <th scope="row" data-astro-cid-wtzqjce7>Instagram, TikTok, Facebook y X</th> <td data-astro-cid-wtzqjce7>Sí, como apps completas</td> <td data-astro-cid-wtzqjce7>No</td> <td class="us" data-astro-cid-wtzqjce7>
+<svg aria-hidden="true" focusable="false" class="icon "
+ 
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="1.75"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M20 6 9 17l-5-5" />
+</svg>
+Sí</td> </tr><tr data-astro-cid-wtzqjce7> <th scope="row" data-astro-cid-wtzqjce7>Difícil de quitar en un momento de tentación</th> <td data-astro-cid-wtzqjce7>Se quita desde Ajustes</td> <td data-astro-cid-wtzqjce7>Con más de 0 minutos, el aviso se descarta</td> <td class="us" data-astro-cid-wtzqjce7>
+<svg aria-hidden="true" focusable="false" class="icon "
+ 
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="1.75"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M20 6 9 17l-5-5" />
+</svg>
+Contraseña y modo nuclear</td> </tr> </tbody> </table> </div> <p class="source" data-astro-cid-wtzqjce7><a class="link-arrow" href="https://danielaguilarj.github.io/momentum-app/bloquear-reels-shorts-android/" data-astro-cid-wtzqjce7>Detalles y fuentes en la guía
+<svg aria-hidden="true" focusable="false" class="icon "
+ 
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="1.75"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M5 12h14" />
+  <path d="m12 5 7 7-7 7" />
+</svg>
+</a></p> </div> </section> <section class="free" data-astro-cid-wtzqjce7> <div class="shell free-grid" data-astro-cid-wtzqjce7> <p class="words" data-astro-cid-wtzqjce7><span data-astro-cid-wtzqjce7>Gratis. </span><span data-astro-cid-wtzqjce7>Sin anuncios. </span><span data-astro-cid-wtzqjce7>Sin cuenta. </span></p> <p class="free-text" data-astro-cid-wtzqjce7>Todas las funciones están disponibles sin pagar, la app no muestra publicidad y puedes usarla sin registrarte.</p> </div> </section> <section class="guides" aria-labelledby="guides-title" data-astro-cid-qfqsfzny> <div class="shell" data-astro-cid-qfqsfzny> <div class="guides-head" data-astro-cid-qfqsfzny> <h2 id="guides-title" data-astro-cid-qfqsfzny>Guías para dejar el scroll infinito</h2> <a class="link-arrow" href="https://danielaguilarj.github.io/momentum-app/guias/" data-astro-cid-qfqsfzny>Ver todas las guías
+<svg aria-hidden="true" focusable="false" class="icon "
+ 
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="1.75"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M5 12h14" />
+  <path d="m12 5 7 7-7 7" />
+</svg>
+</a> </div> <ul class="guide-list" data-astro-cid-qfqsfzny> <li data-astro-cid-qfqsfzny> <a href="https://danielaguilarj.github.io/momentum-app/bloquear-reels-shorts-android/" data-astro-cid-qfqsfzny> <span class="g-title" data-astro-cid-qfqsfzny>Cómo bloquear los Reels de Instagram y los Shorts de YouTube en Android</span> 
+<svg aria-hidden="true" focusable="false" class="icon "
+ 
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="1.75"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M5 12h14" />
+  <path d="m12 5 7 7-7 7" />
+</svg>
+ </a> </li><li data-astro-cid-qfqsfzny> <a href="https://danielaguilarj.github.io/momentum-app/reducir-tiempo-de-pantalla-android/" data-astro-cid-qfqsfzny> <span class="g-title" data-astro-cid-qfqsfzny>Cómo reducir el tiempo de pantalla en el celular: 8 pasos que sí funcionan</span> 
+<svg aria-hidden="true" focusable="false" class="icon "
+ 
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="1.75"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M5 12h14" />
+  <path d="m12 5 7 7-7 7" />
+</svg>
+ </a> </li><li data-astro-cid-qfqsfzny> <a href="https://danielaguilarj.github.io/momentum-app/vida-en-semanas/" data-astro-cid-qfqsfzny> <span class="g-title" data-astro-cid-qfqsfzny>Tu vida en semanas: qué es y cómo verla en tu celular</span> 
+<svg aria-hidden="true" focusable="false" class="icon "
+ 
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="1.75"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M5 12h14" />
+  <path d="m12 5 7 7-7 7" />
+</svg>
+ </a> </li><li data-astro-cid-qfqsfzny> <a href="https://danielaguilarj.github.io/momentum-app/launcher-minimalista-android/" data-astro-cid-qfqsfzny> <span class="g-title" data-astro-cid-qfqsfzny>Launcher minimalista: un celular sin distracciones, sin cambiar de teléfono</span> 
+<svg aria-hidden="true" focusable="false" class="icon "
+ 
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="1.75"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M5 12h14" />
+  <path d="m12 5 7 7-7 7" />
+</svg>
+ </a> </li><li data-astro-cid-qfqsfzny> <a href="https://danielaguilarj.github.io/momentum-app/elegir-app-para-bloquear-apps-android/" data-astro-cid-qfqsfzny> <span class="g-title" data-astro-cid-qfqsfzny>Cómo elegir una app para bloquear apps en Android (y qué evitar)</span> 
+<svg aria-hidden="true" focusable="false" class="icon "
+ 
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="1.75"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M5 12h14" />
+  <path d="m12 5 7 7-7 7" />
+</svg>
+ </a> </li><li data-astro-cid-qfqsfzny> <a href="https://danielaguilarj.github.io/momentum-app/dejar-doomscrolling/" data-astro-cid-qfqsfzny> <span class="g-title" data-astro-cid-qfqsfzny>Cómo dejar el doomscrolling: 7 tácticas que funcionan</span> 
+<svg aria-hidden="true" focusable="false" class="icon "
+ 
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="1.75"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M5 12h14" />
+  <path d="m12 5 7 7-7 7" />
+</svg>
+ </a> </li><li data-astro-cid-qfqsfzny> <a href="https://danielaguilarj.github.io/momentum-app/tecnica-pomodoro-android/" data-astro-cid-qfqsfzny> <span class="g-title" data-astro-cid-qfqsfzny>Técnica Pomodoro en Android: cómo usarla para estudiar o trabajar</span> 
+<svg aria-hidden="true" focusable="false" class="icon "
+ 
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="1.75"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M5 12h14" />
+  <path d="m12 5 7 7-7 7" />
+</svg>
+ </a> </li><li data-astro-cid-qfqsfzny> <a href="https://danielaguilarj.github.io/momentum-app/detox-digital-7-dias/" data-astro-cid-qfqsfzny> <span class="g-title" data-astro-cid-qfqsfzny>Detox digital: un plan de 7 días para empezar hoy</span> 
+<svg aria-hidden="true" focusable="false" class="icon "
+ 
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="1.75"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M5 12h14" />
+  <path d="m12 5 7 7-7 7" />
+</svg>
+ </a> </li><li data-astro-cid-qfqsfzny> <a href="https://danielaguilarj.github.io/momentum-app/limites-que-no-puedas-saltarte-android/" data-astro-cid-qfqsfzny> <span class="g-title" data-astro-cid-qfqsfzny>Cómo poner límites que no puedas saltarte en Android</span> 
+<svg aria-hidden="true" focusable="false" class="icon "
+ 
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="1.75"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M5 12h14" />
+  <path d="m12 5 7 7-7 7" />
+</svg>
+ </a> </li><li data-astro-cid-qfqsfzny> <a href="https://danielaguilarj.github.io/momentum-app/estudiar-sin-distracciones-celular/" data-astro-cid-qfqsfzny> <span class="g-title" data-astro-cid-qfqsfzny>Cómo estudiar sin que el celular te distraiga: 6 pasos</span> 
+<svg aria-hidden="true" focusable="false" class="icon "
+ 
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="1.75"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M5 12h14" />
+  <path d="m12 5 7 7-7 7" />
+</svg>
+ </a> </li> </ul> </div> </section> <section class="faq" aria-labelledby="faq-title" data-astro-cid-qfqsfzny> <div class="shell faq-grid" data-astro-cid-qfqsfzny> <h2 id="faq-title" data-astro-cid-qfqsfzny>Preguntas frecuentes</h2> <div class="faq-list" data-astro-cid-qfqsfzny> <details data-astro-cid-qfqsfzny> <summary data-astro-cid-qfqsfzny>¿Momentum es gratis?
+<svg aria-hidden="true" focusable="false" class="icon "
+ 
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="1.75"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="m6 9 6 6 6-6" />
+</svg>
+</summary> <p data-astro-cid-qfqsfzny>Sí. Todas las funciones están disponibles sin pago y la app no muestra anuncios.</p> </details><details data-astro-cid-qfqsfzny> <summary data-astro-cid-qfqsfzny>¿Necesito crear una cuenta?
+<svg aria-hidden="true" focusable="false" class="icon "
+ 
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="1.75"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="m6 9 6 6 6-6" />
+</svg>
+</summary> <p data-astro-cid-qfqsfzny>No. Puedes usar Momentum sin crear cuenta.</p> </details><details data-astro-cid-qfqsfzny> <summary data-astro-cid-qfqsfzny>¿Puedo bloquear solo los Reels sin bloquear todo Instagram?
+<svg aria-hidden="true" focusable="false" class="icon "
+ 
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="1.75"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="m6 9 6 6 6-6" />
+</svg>
+</summary> <p data-astro-cid-qfqsfzny>Sí. Momentum puede bloquear únicamente la sección de Reels de Instagram o los Shorts de YouTube, y dejarte usar los mensajes y el resto de la app. También tiene un modo solo comunicación que permite mensajes y bloquea feeds, historias y reels.</p> </details><details data-astro-cid-qfqsfzny> <summary data-astro-cid-qfqsfzny>¿Por qué pide el permiso de accesibilidad?
+<svg aria-hidden="true" focusable="false" class="icon "
+ 
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="1.75"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="m6 9 6 6 6-6" />
+</svg>
+</summary> <p data-astro-cid-qfqsfzny>Android solo permite detectar qué app o sección tienes abierta a través del servicio de accesibilidad. Momentum lo usa únicamente para aplicar tus reglas: cuando una coincide, muestra la pantalla de bloqueo o vuelve al inicio. El servicio solo se activa si lo aceptas en el aviso de la app y lo enciendes en los ajustes de Android.</p> </details><details data-astro-cid-qfqsfzny> <summary data-astro-cid-qfqsfzny>¿Y si quiero quitar el bloqueo en un momento de tentación?
+<svg aria-hidden="true" focusable="false" class="icon "
+ 
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="1.75"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="m6 9 6 6 6-6" />
+</svg>
+</summary> <p data-astro-cid-qfqsfzny>Puedes proteger tus reglas con contraseña y usar un desbloqueo de emergencia. Además existe el modo nuclear, el bloqueo más fuerte: bloquea las apps que elijas durante 1 a 3 meses, y para quitarlo antes de tiempo hay que mantener Momentum abierto y visible durante una espera larga y seguida (30 minutos por defecto).</p> </details><details data-astro-cid-qfqsfzny> <summary data-astro-cid-qfqsfzny>¿Funciona si Instagram o YouTube cambian su diseño?
+<svg aria-hidden="true" focusable="false" class="icon "
+ 
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="1.75"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="m6 9 6 6 6-6" />
+</svg>
+</summary> <p data-astro-cid-qfqsfzny>Las apps cambian su diseño con frecuencia. Si Instagram o YouTube modifican cómo está armada una sección, la detección puede fallar hasta que Momentum se actualice. Por eso conviene mantener la app al día.</p> </details><details data-astro-cid-qfqsfzny> <summary data-astro-cid-qfqsfzny>¿Momentum es una herramienta de accesibilidad para personas con discapacidad?
+<svg aria-hidden="true" focusable="false" class="icon "
+ 
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="1.75"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="m6 9 6 6 6-6" />
+</svg>
+</summary> <p data-astro-cid-qfqsfzny>No. Usa el servicio de accesibilidad de Android solo para sus funciones de bloqueo.</p> </details><details data-astro-cid-qfqsfzny> <summary data-astro-cid-qfqsfzny>¿Está afiliada a Instagram, YouTube o TikTok?
+<svg aria-hidden="true" focusable="false" class="icon "
+ 
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="1.75"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="m6 9 6 6 6-6" />
+</svg>
+</summary> <p data-astro-cid-qfqsfzny>No. Momentum es independiente y no tiene relación con esas apps.</p> </details> </div> </div> </section> <section class="dawn" aria-labelledby="dawn-title" data-dawn data-astro-cid-qfqsfzny> <div class="sky" aria-hidden="true" data-astro-cid-qfqsfzny> <div class="sun" data-sun data-astro-cid-qfqsfzny></div> </div> <div class="shell dawn-content" data-astro-cid-qfqsfzny> <h2 id="dawn-title" data-astro-cid-qfqsfzny>Mañana empieza sin scroll.</h2> <ol class="steps" data-astro-cid-qfqsfzny> <li data-astro-cid-qfqsfzny><span class="num" data-astro-cid-qfqsfzny>1</span>Instala Momentum desde Google Play.</li><li data-astro-cid-qfqsfzny><span class="num" data-astro-cid-qfqsfzny>2</span>Elige qué bloquear: una sección, una app o un horario.</li><li data-astro-cid-qfqsfzny><span class="num" data-astro-cid-qfqsfzny>3</span>Activa el servicio cuando la app te lo explique.</li> </ol> <a class="btn" href="https://play.google.com/store/apps/details?id=com.momentummm.app&amp;hl=es_419&amp;referrer=utm_source%3Dmomentum-web%26utm_medium%3Dweb%26utm_content%3Dhome-dawn" rel="noopener" data-astro-cid-qfqsfzny>
+<svg aria-hidden="true" focusable="false" class="icon "
+ 
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="1.75"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M12 15V3" />
+  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+  <path d="m7 10 5 5 5-5" />
+</svg>
+Descargar gratis en Google Play</a> </div> </section> <footer class="foot" data-astro-cid-qfqsfzny> <div class="shell foot-grid" data-astro-cid-qfqsfzny> <a class="brand" href="https://danielaguilarj.github.io/momentum-app/" data-astro-cid-qfqsfzny> <img src="https://danielaguilarj.github.io/momentum-app/assets/icon.png" alt="" width="36" height="36" loading="lazy" data-astro-cid-qfqsfzny>
+Momentum
+</a> <nav aria-label="Momentum" data-astro-cid-qfqsfzny> <a href="https://danielaguilarj.github.io/momentum-app/guias/" data-astro-cid-qfqsfzny>Guías</a> <a href="https://danielaguilarj.github.io/momentum-app/en/" hreflang="en" lang="en" data-astro-cid-qfqsfzny>English</a> <a href="https://github.com/AndreaAguilarJ/InTime" data-astro-cid-qfqsfzny>Código en GitHub</a> </nav> <p class="note" data-astro-cid-qfqsfzny>Momentum no está afiliado a Instagram, YouTube, TikTok ni a ninguna otra app que permite bloquear. Las marcas pertenecen a sus dueños.</p> </div> </footer> </main><script type="module" src="/momentum-app/_astro/Landing.astro_astro_type_script_index_0_lang.suL8_wNj.js"></script>  </body> </html>

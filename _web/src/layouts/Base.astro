@@ -1,0 +1,70 @@
+---
+import "@fontsource-variable/bricolage-grotesque/wdth.css";
+import "@fontsource-variable/geist/wght.css";
+import "@fontsource-variable/geist-mono/wght.css";
+import "../styles/global.css";
+import { BASE, PACKAGE, type Copy } from "../copy";
+
+interface Props {
+  t: Copy;
+}
+const { t } = Astro.props;
+const url = BASE + t.path;
+const altUrl = BASE + t.alt;
+const [esUrl, enUrl] = t.lang === "es" ? [url, altUrl] : [altUrl, url];
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "MobileApplication",
+  name: t.schemaName,
+  alternateName: "Momentum",
+  operatingSystem: "Android 8.0+",
+  applicationCategory: "LifestyleApplication",
+  description: t.schemaDescription,
+  url,
+  inLanguage: t.lang === "es" ? ["es", "en", "pt", "de", "fr"] : ["en", "es", "pt", "de", "fr"],
+  downloadUrl: `https://play.google.com/store/apps/details?id=${PACKAGE}`,
+  installUrl: `https://play.google.com/store/apps/details?id=${PACKAGE}`,
+  image: BASE + "/assets/icon.png",
+  offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+};
+const contract = `
+THESIS: The infinite feed against a finite life. The page opens inside a 1 a.m. doomscroll and ends at dawn. It refuses the category default: a centred phone on a purple gradient above a grid of icon cards.
+OWN-WORLD: Night ground #07060F lit only by the phone and a WebGL river of short-video cards; a violet field for the 4,160-week grid; a dawn horizon (rose to amber) for the close. Bricolage Grotesque condensed display, Geist body, Geist Mono only for time and counts. Detection brackets are the one UI ornament.
+STORY: See the feed, watch Momentum lock onto Reels and block only that while messages stay open, see your weeks, trust the permission, install.
+FIRST VIEWPORT: Left, the two-line H1 near 6rem, lead, light pill CTA to Google Play. Right, the phone tilted in 3D over the card river.
+FORM: The brief pins a top-tier app product page in 3D (canon at full fidelity). Seed dd170b66 assigned grounded #4, the school timetable, kept as the schedule demo's grammar. Raises: viewfinder focus brackets (detection), cyclorama night-to-dawn (page colour journey), VU ballistics (feed motion with mass).
+FINISH: unreviewed and undocumented is unfinished; this build ends with the finish review, the verdict, DESIGN.md, and every shipping raster carrying its provenance
+`;
+---
+
+<!doctype html>
+<html lang={t.lang}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+    <title>{t.title}</title>
+    <meta name="description" content={t.description} />
+    <link rel="canonical" href={url} />
+    <link rel="alternate" hreflang="es" href={esUrl} />
+    <link rel="alternate" hreflang="en" href={enUrl} />
+    <link rel="alternate" hreflang="x-default" href={esUrl} />
+    <meta name="theme-color" content="#07060f" />
+    <link rel="icon" href={`${BASE}/assets/icon.png`} type="image/png" />
+    <link rel="apple-touch-icon" href={`${BASE}/assets/icon.png`} />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Momentum" />
+    <meta property="og:title" content={t.title} />
+    <meta property="og:description" content={t.description} />
+    <meta property="og:url" content={url} />
+    <meta property="og:image" content={`${BASE}/assets/og.png`} />
+    <meta property="og:locale" content={t.ogLocale} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+    <script is:inline>document.documentElement.classList.add("js");</script>
+  </head>
+  <body>
+    <Fragment set:html={`<!--${contract}-->`} />
+    <a class="skip" href="#contenido">{t.skip}</a>
+    <slot />
+  </body>
+</html>

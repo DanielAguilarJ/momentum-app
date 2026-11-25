@@ -1,0 +1,434 @@
+---
+import Icon from "./Icon.astro";
+import type { Copy } from "../copy";
+
+interface Props {
+  t: Copy;
+}
+const { t } = Astro.props;
+const f = t.features;
+const apps = [
+  { n: "Instagram", used: 23, max: 30 },
+  { n: "YouTube", used: 30, max: 30 },
+  { n: "TikTok", used: 6, max: 15 },
+  { n: "X", used: 2, max: 10 },
+];
+// Timetable: [day index from, day index to, hour from, hour to, kind]
+const blocks = [
+  [0, 6, 0, 7, "sleep"],
+  [0, 6, 23, 24, "sleep"],
+  [0, 4, 8, 14, "classes"],
+] as const;
+---
+
+<section class="features" id="funciones" aria-labelledby="features-title">
+  <div class="shell">
+    <header class="head">
+      <h2 id="features-title">{f.h2}</h2>
+      <p class="lead">{f.lead}</p>
+    </header>
+
+    <div class="row">
+      <div class="text">
+        <h3>{f.limits.title}</h3>
+        <p>{f.limits.text}</p>
+      </div>
+      <div class="demo demo-limits" aria-hidden="true">
+        <p class="demo-label">{f.limits.today}</p>
+        <ul>
+          {apps.map((a) => {
+            const full = a.used >= a.max;
+            return (
+              <li class={full ? "full" : ""} style={`--v:${Math.round((a.used / a.max) * 100)}%`}>
+                <span class="mono-tile">{a.n.slice(0, 1)}</span>
+                <span class="app-name">{a.n}</span>
+                <span class="app-time num">
+                  {full ? (
+                    <span class="chip"><Icon name="lock-keyhole" />{f.limits.blocked}</span>
+                  ) : (
+                    `${a.used} ${f.limits.of} ${a.max} ${f.limits.min}`
+                  )}
+                </span>
+                <span class="bar"><span></span></span>
+              </li>
+            );
+          })}
+        </ul>
+      </div>
+    </div>
+
+    <div class="row flip">
+      <div class="text">
+        <h3>{f.schedule.title}</h3>
+        <p>{f.schedule.text}</p>
+      </div>
+      <div class="demo demo-schedule" aria-hidden="true">
+        <div class="tt">
+          <div class="tt-hours num"><span>0</span><span>6</span><span>12</span><span>18</span><span>24</span></div>
+          <div class="tt-body">
+            <div class="tt-days">{f.schedule.days.map((d) => <span>{d}</span>)}</div>
+            <div class="tt-grid">
+              {blocks.map(([d0, d1, h0, h1, kind]) => (
+                <span
+                  class={`tt-block ${kind}`}
+                  style={`--l:${(d0 / 7) * 100}%;--w:${((d1 - d0 + 1) / 7) * 100}%;--top:${(h0 / 24) * 100}%;--h:${((h1 - h0) / 24) * 100}%`}
+                >
+                  {h1 - h0 > 2 ? (kind === "classes" ? f.schedule.classes : f.schedule.sleep) : ""}
+                </span>
+              ))}
+            </div>
+          </div>
+        </div>
+        <p class="wifi-rule"><Icon name="wifi" /><span>{f.schedule.wifi}</span><Icon name="arrow-right" /><b>{f.schedule.wifiRule}</b></p>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="text">
+        <h3>{f.focus.title}</h3>
+        <p>{f.focus.text}</p>
+      </div>
+      <div class="demo demo-focus" aria-hidden="true" data-focus>
+        <p class="demo-label">{f.focus.session}</p>
+        <p class="clock num" data-clock>25:00</p>
+        <div class="ticks" data-ticks>{Array.from({ length: 25 }, () => <i></i>)}</div>
+        <div class="streak">
+          <span class="streak-label">{f.focus.streak} <b class="num">6 {f.focus.days}</b></span>
+          <span class="dots">{Array.from({ length: 7 }, (_, i) => <i class={i === 6 ? "today" : ""}></i>)}</span>
+        </div>
+        <p class="grace">{f.focus.grace}</p>
+      </div>
+    </div>
+
+    <div class="more">
+      <h3>{f.moreTitle}</h3>
+      <dl>
+        {f.more.map(([icon, title, text]) => (
+          <div>
+            <dt><Icon name={icon} />{title}</dt>
+            <dd>{text}</dd>
+          </div>
+        ))}
+      </dl>
+    </div>
+  </div>
+</section>
+
+<style>
+  .features {
+    background: var(--night);
+    padding-block: clamp(120px, 14vw, 200px) clamp(96px, 10vw, 140px);
+  }
+  .head {
+    max-width: 880px;
+  }
+  .head .lead {
+    margin-top: 24px;
+  }
+  .row {
+    display: grid;
+    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+    gap: clamp(32px, 6vw, 96px);
+    align-items: center;
+    margin-top: clamp(88px, 10vw, 140px);
+  }
+  .row.flip .text {
+    order: 2;
+  }
+  .text h3 {
+    font-size: clamp(1.9rem, 3.2vw, 2.75rem);
+    line-height: 1.02;
+    letter-spacing: -0.03em;
+  }
+  .text p {
+    margin-top: 18px;
+    color: var(--ink-2);
+    font-size: 1.125rem;
+    max-width: 30em;
+  }
+  .demo {
+    position: relative;
+    border-radius: 28px;
+    padding: clamp(24px, 3vw, 40px);
+    background: linear-gradient(160deg, var(--night-3), var(--night-2));
+    box-shadow: inset 0 0 0 1px var(--line), 0 40px 80px -50px rgb(99 102 241 / 0.32);
+  }
+  .demo-label {
+    font-size: 0.8125rem;
+    font-weight: 600;
+    color: var(--ink-3);
+    margin-bottom: 20px;
+  }
+
+  /* Limits */
+  .demo-limits ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 22px;
+  }
+  .demo-limits li {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    gap: 10px 14px;
+    align-items: center;
+  }
+  .mono-tile {
+    width: 36px;
+    height: 36px;
+    border-radius: 11px;
+    display: grid;
+    place-items: center;
+    font-weight: 700;
+    background: rgb(238 240 255 / 0.08);
+    color: var(--ink);
+  }
+  .app-name {
+    font-weight: 600;
+  }
+  .app-time {
+    font-size: 0.9rem;
+    color: var(--ink-2);
+  }
+  .bar {
+    grid-column: 2 / -1;
+    height: 6px;
+    border-radius: 6px;
+    background: rgb(238 240 255 / 0.08);
+    overflow: hidden;
+  }
+  .bar span {
+    display: block;
+    height: 100%;
+    width: var(--v);
+    border-radius: inherit;
+    background: var(--violet-2);
+  }
+  .full .bar span {
+    background: var(--rose);
+  }
+  .chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 4px 10px 4px 8px;
+    border-radius: 999px;
+    background: rgb(251 113 133 / 0.14);
+    color: #fecdd3;
+    font-family: var(--font-body);
+    font-weight: 600;
+    font-size: 0.8125rem;
+  }
+  .chip :global(svg) {
+    width: 14px;
+    height: 14px;
+  }
+
+  /* Schedule (timetable grammar) */
+  .tt {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 12px;
+  }
+  .tt-hours {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-top: 30px;
+    font-size: 0.75rem;
+    color: var(--ink-3);
+    text-align: right;
+  }
+  .tt-hours span {
+    transform: translateY(-50%);
+  }
+  .tt-hours span:first-child {
+    transform: none;
+  }
+  .tt-hours span:last-child {
+    transform: translateY(-100%);
+  }
+  .tt-days {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    text-align: center;
+    font-size: 0.8125rem;
+    font-weight: 600;
+    color: var(--ink-2);
+    height: 30px;
+  }
+  .tt-grid {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    height: 260px;
+    border-radius: 14px;
+    background:
+      repeating-linear-gradient(90deg, transparent 0 calc(100% / 7 - 1px), var(--line) calc(100% / 7 - 1px) calc(100% / 7)),
+      repeating-linear-gradient(180deg, transparent 0 calc(25% - 1px), var(--line) calc(25% - 1px) 25%);
+    box-shadow: inset 0 0 0 1px var(--line);
+  }
+  .tt-block {
+    position: absolute;
+    left: calc(var(--l) + 3px);
+    width: calc(var(--w) - 6px);
+    top: calc(var(--top) + 2px);
+    height: calc(var(--h) - 4px);
+    border-radius: 9px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8125rem;
+    font-weight: 600;
+    overflow: hidden;
+  }
+  .tt-block.sleep {
+    background: rgb(99 102 241 / 0.28);
+    color: #c7d2fe;
+  }
+  .tt-block.classes {
+    background: var(--violet);
+    color: #fff;
+  }
+  .wifi-rule {
+    margin-top: 22px;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    font-size: 0.95rem;
+    color: var(--ink-2);
+  }
+  .wifi-rule :global(svg) {
+    width: 18px;
+    height: 18px;
+    color: var(--mint);
+  }
+  .wifi-rule b {
+    color: var(--ink);
+    font-weight: 600;
+  }
+
+  /* Focus */
+  .demo-focus {
+    text-align: left;
+  }
+  .clock {
+    font-family: var(--font-body);
+    font-variant-numeric: tabular-nums;
+    font-size: clamp(4.5rem, 9vw, 7.5rem);
+    line-height: 0.9;
+    font-weight: 300;
+    letter-spacing: -0.04em;
+  }
+  .ticks {
+    display: grid;
+    grid-template-columns: repeat(25, 1fr);
+    gap: 4px;
+    margin-top: 28px;
+  }
+  .ticks i {
+    height: 28px;
+    border-radius: 3px;
+    background: rgb(238 240 255 / 0.1);
+    transition: background-color 0.6s;
+  }
+  .ticks i.on {
+    background: var(--mint);
+  }
+  .streak {
+    margin-top: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+  .streak-label {
+    color: var(--ink-2);
+  }
+  .streak-label b {
+    color: var(--ink);
+    font-weight: 600;
+  }
+  .dots {
+    display: flex;
+    gap: 6px;
+  }
+  .dots i {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: var(--amber);
+  }
+  .dots i.today {
+    background: transparent;
+    box-shadow: inset 0 0 0 2px var(--amber);
+  }
+  .grace {
+    margin-top: 10px;
+    font-size: 0.875rem;
+    color: var(--ink-3);
+  }
+
+  /* And also */
+  .more {
+    margin-top: clamp(96px, 11vw, 150px);
+    padding-top: 40px;
+    border-top: 1px solid var(--line);
+    display: grid;
+    grid-template-columns: minmax(0, 0.9fr) minmax(0, 2.1fr);
+    gap: 32px clamp(32px, 6vw, 96px);
+  }
+  .more h3 {
+    font-size: clamp(1.6rem, 2.4vw, 2.1rem);
+  }
+  dl {
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 36px 48px;
+  }
+  dt {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 600;
+    font-size: 1.0625rem;
+  }
+  dt :global(svg) {
+    width: 20px;
+    height: 20px;
+    color: var(--violet-2);
+    flex: none;
+  }
+  dd {
+    margin: 8px 0 0 30px;
+    color: var(--ink-2);
+    font-size: 0.975rem;
+  }
+
+  @media (max-width: 860px) {
+    .row {
+      grid-template-columns: 1fr;
+      margin-top: 80px;
+    }
+    .row.flip .text {
+      order: 0;
+    }
+    .more {
+      grid-template-columns: 1fr;
+    }
+    dl {
+      grid-template-columns: 1fr;
+      gap: 28px;
+    }
+    .tt-grid {
+      height: 220px;
+    }
+    .tt-block {
+      font-size: 0.6875rem;
+    }
+  }
+</style>

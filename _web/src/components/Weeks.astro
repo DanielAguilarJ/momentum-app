@@ -1,0 +1,180 @@
+---
+import type { Copy } from "../copy";
+
+interface Props {
+  t: Copy;
+}
+const { t } = Astro.props;
+const w = t.weeks;
+const AGE = 25;
+const fmt = new Intl.NumberFormat(t.lang === "es" ? "es-MX" : "en-US");
+---
+
+<section class="weeks" aria-labelledby="weeks-title" data-weeks>
+  <div class="weeks-canvas-wrap">
+    <canvas class="weeks-canvas" data-weeks-canvas role="img" aria-label={w.alt}></canvas>
+  </div>
+  <div class="shell weeks-grid">
+    <div class="weeks-copy">
+      <h2 id="weeks-title">{w.h2}</h2>
+      <p class="lead">{w.text}</p>
+      <div class="age">
+        <label for="age-input">{w.age}</label>
+        <div class="age-row">
+          <input id="age-input" type="range" min="1" max="79" value={AGE} data-age />
+          <output for="age-input" class="num age-value" data-age-out>{AGE}</output>
+        </div>
+        <p class="tally num" aria-live="polite">
+          <span><b data-lived>{fmt.format(AGE * 52)}</b> {w.lived}</span>
+          <span><b data-left>{fmt.format(4160 - AGE * 52)}</b> {w.left}</span>
+        </p>
+        <p class="note">{w.note}</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .weeks {
+    position: relative;
+    background: var(--violet-field);
+    overflow: hidden;
+    min-height: 100svh;
+    display: grid;
+    align-items: center;
+    padding-block: clamp(96px, 12vw, 160px);
+    isolation: isolate;
+  }
+  .weeks::before {
+    content: "";
+    position: absolute;
+    inset: 0 0 auto;
+    height: 220px;
+    background: linear-gradient(var(--night), transparent);
+    z-index: 1;
+    pointer-events: none;
+  }
+  .weeks-canvas-wrap {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+  }
+  .weeks-canvas {
+    width: 100%;
+    height: 100%;
+  }
+  .weeks-grid {
+    position: relative;
+    z-index: 2;
+  }
+  .weeks-copy {
+    max-width: 540px;
+  }
+  /* The field is lit from the right; the copy sits in its shadow. */
+  .weeks::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+    background: linear-gradient(90deg, rgb(28 20 70 / 0.96) 0%, rgb(28 20 70 / 0.85) 32%, rgb(28 20 70 / 0) 56%);
+  }
+  h2 {
+    color: var(--ink);
+  }
+  .lead {
+    margin-top: 24px;
+    color: #cfc8f3;
+  }
+  .age {
+    margin-top: 40px;
+    display: grid;
+    gap: 12px;
+  }
+  label {
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: var(--ink);
+  }
+  .age-row {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+  }
+  .age-value {
+    min-width: 2.6ch;
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--ink);
+  }
+  input[type="range"] {
+    flex: 1;
+    appearance: none;
+    height: 44px;
+    background: transparent;
+    cursor: pointer;
+  }
+  input[type="range"]::-webkit-slider-runnable-track {
+    height: 6px;
+    border-radius: 6px;
+    background: linear-gradient(90deg, var(--violet-2) var(--fill, 31%), rgb(196 181 253 / 0.2) var(--fill, 31%));
+  }
+  input[type="range"]::-moz-range-track {
+    height: 6px;
+    border-radius: 6px;
+    background: rgb(196 181 253 / 0.2);
+  }
+  input[type="range"]::-moz-range-progress {
+    height: 6px;
+    border-radius: 6px;
+    background: var(--violet-2);
+  }
+  input[type="range"]::-webkit-slider-thumb {
+    appearance: none;
+    width: 26px;
+    height: 26px;
+    margin-top: -10px;
+    border-radius: 50%;
+    background: var(--ink);
+    border: 0;
+    box-shadow: 0 4px 14px -2px rgb(0 0 0 / 0.5);
+    transition: transform 0.3s var(--ease-out);
+  }
+  input[type="range"]::-moz-range-thumb {
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background: var(--ink);
+    border: 0;
+  }
+  input[type="range"]:active::-webkit-slider-thumb {
+    transform: scale(1.15);
+  }
+  .tally {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px 24px;
+    font-size: 1rem;
+    color: #cfc8f3;
+  }
+  .tally b {
+    font-weight: 600;
+    color: var(--violet-3);
+  }
+  .tally span + span b {
+    color: var(--ink);
+  }
+  .note {
+    font-size: 0.8125rem;
+    color: #a99fdc;
+  }
+  @media (max-width: 860px) {
+    .weeks {
+      align-items: end;
+      min-height: 112svh;
+    }
+    .weeks::after {
+      background: linear-gradient(180deg, rgb(28 20 70 / 0) 30%, rgb(28 20 70 / 0.9) 52%, rgb(28 20 70 / 0.97) 100%);
+    }
+  }
+</style>
