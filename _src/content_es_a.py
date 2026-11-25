@@ -29,12 +29,7 @@ HOME_BODY = f"""
 <p>{cta("home-steps")}</p>
 
 <h2>Guías para dejar el scroll infinito</h2>
-<ul>
-<li><a href="{BASE}/bloquear-reels-shorts-android/">Cómo bloquear los Reels de Instagram y los Shorts de YouTube en Android</a></li>
-<li><a href="{BASE}/reducir-tiempo-de-pantalla-android/">Cómo reducir el tiempo de pantalla en el celular: 8 pasos</a></li>
-<li><a href="{BASE}/vida-en-semanas/">Tu vida en semanas: qué es y cómo verla en tu celular</a></li>
-<li><a href="{BASE}/launcher-minimalista-android/">Launcher minimalista: un celular sin distracciones sin cambiar de teléfono</a></li>
-</ul>
+<!--GUIDES-->
 
 <h2>Tu privacidad</h2>
 <p>Tus reglas de bloqueo y lo que lee el servicio de accesibilidad se quedan en tu teléfono. Momentum no lo guarda, no lo envía a ningún servidor y no lo comparte con terceros. Puedes desactivar el servicio cuando quieras en Ajustes &gt; Accesibilidad.</p>
@@ -44,7 +39,7 @@ HOME_BODY = f"""
 <details><summary>¿Necesito crear una cuenta?</summary><p>No. Puedes usar Momentum sin crear cuenta.</p></details>
 <details><summary>¿Puedo bloquear solo los Reels sin bloquear todo Instagram?</summary><p>Sí. Momentum puede bloquear únicamente la sección de Reels de Instagram o los Shorts de YouTube, y dejarte usar los mensajes y el resto de la app. También tiene un modo solo comunicación que permite mensajes y bloquea feeds, historias y reels.</p></details>
 <details><summary>¿Por qué pide el permiso de accesibilidad?</summary><p>Android solo permite detectar qué app o sección tienes abierta a través del servicio de accesibilidad. Momentum lo usa únicamente para aplicar tus reglas: cuando una coincide, muestra la pantalla de bloqueo o vuelve al inicio. El servicio solo se activa si lo aceptas en el aviso de la app y lo enciendes en los ajustes de Android.</p></details>
-<details><summary>¿Y si quiero quitar el bloqueo en un momento de tentación?</summary><p>Puedes proteger tus reglas con contraseña y usar un desbloqueo de emergencia. Además existe el modo nuclear, el bloqueo más fuerte: una vez activado no se puede quitar hasta que termine el periodo que elegiste.</p></details>
+<details><summary>¿Y si quiero quitar el bloqueo en un momento de tentación?</summary><p>Puedes proteger tus reglas con contraseña y usar un desbloqueo de emergencia. Además existe el modo nuclear, el bloqueo más fuerte: bloquea las apps que elijas durante 1 a 3 meses, y para quitarlo antes de tiempo hay que mantener Momentum abierto y visible durante una espera larga y seguida (30 minutos por defecto).</p></details>
 <details><summary>¿Momentum es una herramienta de accesibilidad para personas con discapacidad?</summary><p>No. Usa el servicio de accesibilidad de Android solo para sus funciones de bloqueo.</p></details>
 <details><summary>¿Está afiliada a Instagram, YouTube o TikTok?</summary><p>No. Momentum es independiente y no tiene relación con esas apps.</p></details>
 <p>{cta("home-bottom")}</p>
@@ -102,7 +97,7 @@ REELS_BODY = f"""
 <li><strong>Contraseña:</strong> protege tus reglas para que cambiarlas exija una contraseña.</li>
 <li><strong>Modo solo comunicación:</strong> permite los mensajes y bloquea feeds, historias y reels.</li>
 <li><strong>Horarios:</strong> bloquea por días y horas, por ejemplo mientras estudias o duermes.</li>
-<li><strong>Modo nuclear:</strong> es el bloqueo más fuerte. Una vez activado, no se puede quitar hasta que termine el periodo que elegiste. Úsalo con cuidado.</li>
+<li><strong>Modo nuclear:</strong> es el bloqueo más fuerte. Bloquea las apps que elijas durante 1 a 3 meses, y para quitarlo antes de tiempo hay que mantener Momentum abierto y visible durante una espera larga y seguida (30 minutos por defecto). Úsalo con cuidado.</li>
 </ul>
 
 <h2>Una limitación honesta</h2>

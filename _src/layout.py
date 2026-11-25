@@ -63,13 +63,8 @@ def jsonld(data):
 
 
 NAV = {
-    "es": [("/bloquear-reels-shorts-android/", "Bloquear Reels y Shorts"),
-           ("/reducir-tiempo-de-pantalla-android/", "Tiempo de pantalla"),
-           ("/vida-en-semanas/", "Vida en semanas"),
-           ("/launcher-minimalista-android/", "Launcher minimalista")],
-    "en": [("/en/block-reels-shorts-android/", "Block Reels & Shorts"),
-           ("/en/reduce-screen-time-android/", "Screen time"),
-           ("/en/life-in-weeks-app/", "Life in weeks")],
+    "es": [("/guias/", "Guías"), ("/bloquear-reels-shorts-android/", "Bloquear Reels y Shorts")],
+    "en": [("/en/guides/", "Guides"), ("/en/block-reels-shorts-android/", "Block Reels & Shorts")],
 }
 LANG_TXT = {"es": ("es", "es_419", "English", "Android: Momentum", "Descargar gratis en Google Play"),
             "en": ("en", "en", "Español", "Android: Momentum", "Get it free on Google Play")}

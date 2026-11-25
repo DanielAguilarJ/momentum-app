@@ -36,7 +36,7 @@ SCREEN_BODY = f"""
 <h2>8. Sustituye el hábito, no solo lo quites</h2>
 <p>Si quitas el scroll y no pones nada en su lugar, el hueco se llena con otra app. Usa ese tiempo para una sesión de enfoque: Momentum trae un temporizador Pomodoro (25/5) o con la duración que elijas, con metas diarias y semanales y rachas. Revisa tu resumen cada semana y ajusta los límites.</p>
 
-<div class="card"><p><strong>Una advertencia útil:</strong> si usas el modo más estricto de Momentum (el modo nuclear), una vez activado no se puede quitar hasta que termine el periodo. Empieza con límites normales y protégelos con contraseña, y reserva el modo nuclear para cuando ya conozcas tus hábitos.</p></div>
+<div class="card"><p><strong>Una advertencia útil:</strong> el modo más estricto de Momentum (el modo nuclear) bloquea las apps que elijas durante 1 a 3 meses, y quitarlo antes de tiempo exige una espera larga y seguida con la app abierta. Empieza con límites normales y protégelos con contraseña, y reserva el modo nuclear para cuando ya conozcas tus hábitos.</p></div>
 
 <p>{cta("guia-pantalla-final")}</p>
 
@@ -144,7 +144,7 @@ def life():
 
 def launcher():
     p = dict(lang="es", path="/launcher-minimalista-android/", alt=None,
-             title="Launcher minimalista para Android: un dumbphone sin cambiar de teléfono",
+             title="Launcher minimalista en Android: dumbphone sin cambiar de teléfono",
              description="Qué es un launcher minimalista, cómo activarlo en Android y cómo dejar solo teléfono, mensajes y contactos para reducir distracciones sin cambiar de celular.",
              h1="Launcher minimalista: un celular sin distracciones, sin cambiar de teléfono", body=LAUNCHER_BODY)
     p["schema"] = article_schema(p)

@@ -1,18 +1,60 @@
 """Genera el sitio estático en la raíz del repositorio. Uso: python3 -s _src/build.py"""
 import os
 import sys
+from html import escape
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)
 sys.path.insert(0, HERE)
 
 import content_en as en
+import content_en_b as enb
 import content_es_a as esa
 import content_es_b as esb
+import content_es_c as esc
 from layout import BASE, TODAY, page
 
-PAGES = [esa.home(), esa.reels(), esb.screen(), esb.life(), esb.launcher(),
-         en.home(), en.reels(), en.screen(), en.life()]
+HUB = {"es": ("/guias/", "Guías de Momentum para usar menos el celular",
+              "Guías prácticas para reducir tu tiempo de pantalla en Android: bloquear Reels y Shorts, detox digital, técnica Pomodoro, vida en semanas y más.",
+              "Guías para usar menos el celular", "Todas las guías, con pasos que puedes aplicar hoy."),
+       "en": ("/en/guides/", "Momentum guides to use your phone less",
+              "Practical guides to cut your screen time on Android: block Reels and Shorts, digital detox, Pomodoro technique, life in weeks and more.",
+              "Guides to use your phone less", "All the guides, with steps you can apply today.")}
+RELATED_TITLE = {"es": "Más guías", "en": "More guides"}
+
+CONTENT = (esa.home(), esa.reels(), esb.screen(), esb.life(), esb.launcher(), *esc.pages(),
+           en.home(), en.reels(), en.screen(), en.life(), *enb.pages())
+
+
+def guides(lang):
+    return [p for p in CONTENT if p["lang"] == lang and not p.get("home")]
+
+
+def link_list(items):
+    return "<ul>" + "".join(f'<li><a href="{BASE}{p["path"]}">{escape(p["h1"])}</a></li>' for p in items) + "</ul>"
+
+
+def finish():
+    pages = list(CONTENT)
+    for lang in ("es", "en"):
+        g = guides(lang)
+        for p in pages:
+            if p["lang"] != lang:
+                continue
+            if p.get("home"):
+                p["body"] = p["body"].replace("<!--GUIDES-->", link_list(g) + (
+                    f'<p><a href="{BASE}{HUB[lang][0]}">{"Ver todas las guías" if lang == "es" else "See all guides"}</a></p>'))
+            else:
+                i = g.index(p)
+                rel = [g[(i + k) % len(g)] for k in (1, 2, 3)]
+                p["body"] += f'<h2>{RELATED_TITLE[lang]}</h2>' + link_list(rel)
+        path, title, desc, h1, lead = HUB[lang]
+        alt = HUB["en" if lang == "es" else "es"][0]
+        hub_body = f"<h1>{h1}</h1><p class=\"lead\">{lead}</p>" + "".join(
+            f'<div class="card"><h3><a href="{BASE}{p["path"]}">{escape(p["h1"])}</a></h3><p>{escape(p["description"])}</p></div>'
+            for p in g)
+        pages.append(dict(lang=lang, path=path, alt=alt, title=title, description=desc, h1=h1, body=hub_body, schema=[]))
+    return pages
 
 
 def write(rel, text):
@@ -23,11 +65,16 @@ def write(rel, text):
 
 
 def main():
+    PAGES = finish()
     seen = set()
     for p in PAGES:
         assert p["path"] not in seen, p["path"]
         seen.add(p["path"])
         write(p["path"].lstrip("/") + "index.html", page(p))
+    paths = {p["path"] for p in PAGES}
+    for p in PAGES:
+        if p.get("alt"):
+            assert p["alt"] in paths, (p["path"], p["alt"])
 
     urls = []
     for p in PAGES:

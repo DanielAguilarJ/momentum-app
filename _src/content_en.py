@@ -35,11 +35,7 @@ HOME_BODY = f"""
 <p>{cta("home-steps-en")}</p>
 
 <h2>Guides to stop doomscrolling</h2>
-<ul>
-<li><a href="{BASE}/en/block-reels-shorts-android/">How to block Instagram Reels and YouTube Shorts on Android</a></li>
-<li><a href="{BASE}/en/reduce-screen-time-android/">How to reduce screen time on your phone: 8 steps</a></li>
-<li><a href="{BASE}/en/life-in-weeks-app/">Your life in weeks: what it is and how to see it on your phone</a></li>
-</ul>
+<!--GUIDES-->
 
 <h2>Your privacy</h2>
 <p>Your blocking rules and what the accessibility service reads stay on your phone. Momentum does not store it, does not send it to any server and does not share it with third parties. You can turn the service off at any time in Settings &gt; Accessibility.</p>
@@ -49,7 +45,7 @@ HOME_BODY = f"""
 <details><summary>Do I need an account?</summary><p>No. You can use Momentum without creating an account.</p></details>
 <details><summary>Can I block only Reels without blocking all of Instagram?</summary><p>Yes. Momentum can block just the Reels section of Instagram or YouTube Shorts and let you keep using messages and the rest of the app. It also has a communication-only mode that allows messages and blocks feeds, stories and reels.</p></details>
 <details><summary>Why does it ask for the accessibility permission?</summary><p>Android only lets an app see which app or section is open through the accessibility service. Momentum uses it only to apply your rules: when one matches, it shows the block screen or returns to the home screen. The service only turns on if you accept the notice in the app and enable it in Android settings.</p></details>
-<details><summary>What if I want to remove the block in a moment of temptation?</summary><p>You can protect your rules with a password and use an emergency unlock. There is also nuclear mode, the strongest block: once it is on, it cannot be turned off until the period you chose ends.</p></details>
+<details><summary>What if I want to remove the block in a moment of temptation?</summary><p>You can protect your rules with a password and use an emergency unlock. There is also nuclear mode, the strongest block: it locks the apps you choose for 1 to 3 months, and turning it off early means keeping Momentum open and visible for a long, uninterrupted wait (30 minutes by default).</p></details>
 <details><summary>Is Momentum an accessibility tool for people with disabilities?</summary><p>No. It uses Android's accessibility service only for its blocking features.</p></details>
 <details><summary>Is it affiliated with Instagram, YouTube or TikTok?</summary><p>No. Momentum is independent and has no relationship with those apps.</p></details>
 <p>{cta("home-bottom-en")}</p>
@@ -107,7 +103,7 @@ REELS_BODY = f"""
 <li><strong>Password:</strong> protect your rules so that changing them requires a password.</li>
 <li><strong>Communication-only mode:</strong> allows messages and blocks feeds, stories and reels.</li>
 <li><strong>Schedules:</strong> block by days and hours, for example while you study or sleep.</li>
-<li><strong>Nuclear mode:</strong> the strongest block. Once it is on, it cannot be removed until the period you chose ends. Use it with care.</li>
+<li><strong>Nuclear mode:</strong> the strongest block. It locks the apps you choose for 1 to 3 months, and turning it off early means keeping Momentum open and visible for a long, uninterrupted wait (30 minutes by default). Use it with care.</li>
 </ul>
 
 <h2>An honest limitation</h2>
@@ -161,7 +157,7 @@ SCREEN_BODY = f"""
 <h2>8. Replace the habit, do not just remove it</h2>
 <p>If you remove scrolling and put nothing in its place, the gap fills with another app. Use that time for a focus session: Momentum has a Pomodoro timer (25/5) or your own duration, with daily and weekly goals and streaks. Check your summary every week and adjust your limits.</p>
 
-<div class="card"><p><strong>A useful warning:</strong> if you use Momentum's strictest mode (nuclear mode), once it is on it cannot be removed until the period ends. Start with normal limits protected by a password, and keep nuclear mode for when you already know your habits.</p></div>
+<div class="card"><p><strong>A useful warning:</strong> Momentum's strictest mode (nuclear mode) locks the apps you choose for 1 to 3 months, and turning it off early takes a long, uninterrupted wait with the app open. Start with normal limits protected by a password, and keep nuclear mode for when you already know your habits.</p></div>
 
 <p>{cta("guide-screen-bottom-en")}</p>
 
