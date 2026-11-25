@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://danielaguilarj.github.io/momentum-app/sitemap.xml

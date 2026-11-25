@@ -1,0 +1,20 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><style>
+html,body{margin:0;width:1200px;height:630px;background:#4f46e5;font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;color:#fff;overflow:hidden}
+.w{display:grid;grid-template-columns:repeat(52,1fr);gap:3px;position:absolute;inset:0;padding:24px;opacity:.16}
+.w i{aspect-ratio:1;background:#fff;border-radius:2px}.w i.f{background:transparent;outline:1px solid #fff}
+.c{position:absolute;left:80px;top:150px;right:80px}
+img{width:120px;height:120px;border-radius:28px;display:block;margin-bottom:28px}
+h1{font-size:76px;line-height:1.05;margin:0 0 20px;letter-spacing:-.02em}
+p{font-size:34px;line-height:1.3;margin:0;opacity:.92;max-width:900px}
+</style></head><body>
+<div class="w" id="g"></div>
+<div class="c"><img src="../assets/icon.png" alt="">
+<h1>Momentum</h1>
+<p>Bloquea Reels, Shorts y apps. Gratis, sin anuncios y sin cuenta.</p></div>
+<script>
+var g=document.getElementById('g'),h='';
+for(var n=0;n<52*14;n++){h+='<i class="'+(n<420?'':'f')+'"></i>'}
+g.innerHTML=h;
+</script>
+</body></html>
